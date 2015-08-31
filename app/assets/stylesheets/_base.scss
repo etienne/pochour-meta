@@ -1,5 +1,5 @@
 $text-color: #414141;
-$highlight-color: #9C0AF4;
+$background-color: white;
 
 %base-typography {
   font-family: "Clear Sans";
@@ -42,4 +42,8 @@ ul {
 .secondary-links a {
   font-weight: 100;
   border-bottom: 1px solid rgba($text-color, 0.5);
+  
+  &:hover {
+    border-bottom-color: inherit;
+  }
 }

@@ -1,0 +1,12 @@
+div.notice, div.alert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+div.alert {
+  background: #FFE400;
+}
