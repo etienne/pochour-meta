@@ -1,0 +1,21 @@
+input {
+  @extend %base-typography;
+  border: 2px solid;
+  background-color: white;
+  padding: 0.5rem;
+  margin: 0.9rem 0;
+}
+
+input:focus {
+  border-color: $highlight-color;
+  outline: none;
+}
+
+input[type=submit] {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+label {
+  margin: 0.9rem 0;
+}

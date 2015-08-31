@@ -1,0 +1,19 @@
+$text-color: #414141;
+$highlight-color: #9C0AF4;
+
+%base-typography {
+  font-family: "Clear Sans";
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  color: $text-color;
+}
+
+html {
+  @extend %base-typography;
+}
+
+a {
+  color: $text-color;
+  text-decoration: none;
+}
