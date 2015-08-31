@@ -1,6 +1,8 @@
 fr:
+  become_cool: "Devenir cool"
   email: "Courriel"
   forgot_password: "Mot de passe oublié"
   login: "Connectation"
   password: "Mot de passe"
+  password_confirmation: "Mot de passe (encore)"
   sign_up: "Créer un compte"

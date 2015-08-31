@@ -12,6 +12,13 @@
 <% unless notice.blank? -%><div class="notice"><%= notice %></div><% end -%>
 <% unless alert.blank? -%><div class="alert"><%= alert %></div><% end -%>
 
+<% if user_signed_in? %>
+<header>
+  <span class="light">Salut</span> <span class="account-menu">Étienne Després</span>
+  <a href="#" class="button">Écrire dequoi</a>
+</header>
+<% end %>
+
 <%= yield %>
 
 </body>

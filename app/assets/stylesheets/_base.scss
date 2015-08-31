@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  margin: 5rem 1rem;
+  margin: 4rem 1rem;
   
   @include tablet {
     @include container(96%);
@@ -27,6 +27,10 @@ body {
   @include desktop {
     @include container(960px);
   }
+}
+
+.light {
+  font-weight: 100;
 }
 
 a {
@@ -46,4 +50,13 @@ ul {
   &:hover {
     border-bottom-color: inherit;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 52px;
 }

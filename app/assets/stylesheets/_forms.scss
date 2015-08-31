@@ -1,4 +1,4 @@
-input {
+input, a.button {
   @extend %base-typography;
   border: 2px solid;
   background-color: white;
@@ -12,14 +12,15 @@ input:focus {
   box-shadow: 0 0 0 2px rgba($text-color, 0.15);
 }
 
-input[type=submit] {
+input[type=submit], a.button {
   cursor: pointer;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
   
   &:hover {
     color: $background-color;
     background-color: $text-color;
+    border-color: $text-color;
   }
 }
 
