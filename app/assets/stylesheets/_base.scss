@@ -19,6 +19,14 @@ html {
 
 body {
   margin: 5rem 1rem;
+  
+  @include tablet {
+    @include container(96%);
+  }
+  
+  @include desktop {
+    @include container(960px);
+  }
 }
 
 a {
