@@ -4,6 +4,7 @@ input {
   background-color: white;
   padding: 0.5rem;
   margin: 0.9rem 0;
+  width: 100%;
 }
 
 input:focus {
@@ -17,5 +18,10 @@ input[type=submit] {
 }
 
 label {
-  margin: 0.9rem 0;
+  display: block;
+  margin: 1rem 0 0;
+}
+
+form .actions {
+  margin-top: 0.5rem;
 }

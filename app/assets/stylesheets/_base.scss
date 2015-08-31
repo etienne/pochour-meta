@@ -4,16 +4,34 @@ $highlight-color: #9C0AF4;
 %base-typography {
   font-family: "Clear Sans";
   font-size: 14px;
-  line-height: 21px;
+  line-height: 22px;
   font-weight: 500;
   color: $text-color;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
   @extend %base-typography;
 }
 
+body {
+  margin: 5rem 1rem;
+}
+
 a {
   color: $text-color;
   text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.secondary-links a {
+  font-weight: 100;
+  border-bottom: 1px solid rgba($text-color, 0.5);
 }

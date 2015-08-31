@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :lockable
+         :recoverable, :rememberable, :trackable, :validatable
 
   # Always remember me, even without the checkbox
   # http://dev.mensfeld.pl/2013/12/rails-devise-and-remember_me-rememberable-by-default/

@@ -1,0 +1,19 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label t :email %>
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label t :password %>
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t :login %>
+  </div>
+<% end %>
+
+<ul class="secondary-links">
+  <%= render "devise/shared/links" %>
+</ul>
