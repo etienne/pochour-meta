@@ -4,7 +4,7 @@ form {
 
 input, a.button {
   @extend %base-typography;
-  border: 2px solid;
+  border: 2px solid rgba($text-color, 0.2);
   background-color: white;
   padding: 0.5rem;
   margin: 0.8rem 0;
@@ -13,11 +13,12 @@ input, a.button {
 
 input:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba($text-color, 0.15);
+  border-color: rgba($text-color, 0.6);
 }
 
 input[type=submit], a.button {
   cursor: pointer;
+  border-color: $text-color;
   padding-left: 0.9rem;
   padding-right: 0.9rem;
   
