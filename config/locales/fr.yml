@@ -5,4 +5,5 @@ fr:
   login: "Connectation"
   password: "Mot de passe"
   password_confirmation: "Mot de passe (encore)"
+  sign_out: "Déconnectation"
   sign_up: "Créer un compte"
