@@ -1,5 +1,8 @@
 fr:
+  account: "Compte"
   become_cool: "Devenir cool"
+  cancel_account: "Supprimer votre compte"
+  current_password: "Mot de passe actuel"
   email: "Courriel"
   forgot_password: "Mot de passe oublié"
   login: "Connectation"
@@ -7,3 +10,4 @@ fr:
   password_confirmation: "Mot de passe (encore)"
   sign_out: "Déconnectation"
   sign_up: "Créer un compte"
+  update: "Mettre à jour"

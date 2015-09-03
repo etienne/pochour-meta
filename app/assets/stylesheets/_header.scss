@@ -44,6 +44,7 @@ header {
   div.account-menu-popup {
     @extend %no-select;
 
+    text-align: left;
     display: none;
     position: absolute;
     padding: 0.2rem;
