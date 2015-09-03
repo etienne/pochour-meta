@@ -1,4 +1,4 @@
-$text-color: #414141;
+$text-color: black;
 $background-color: white;
 $yellow: #FFE400;
 
@@ -27,6 +27,18 @@ body {
   
   @include desktop {
     @include container(960px);
+  }
+  
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: image-url("gradient-overlay.jpg");
+    background-size: cover;
+    mix-blend-mode: screen;
+    pointer-events:none;
   }
 }
 
