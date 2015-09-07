@@ -13,6 +13,22 @@ $desktop-width: 1024px;
   }
 }
 
+%base-typography {
+  font-family: "Clear Sans";
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+  color: $text-color;
+}
+
+%serif {
+  font-family: "Noticia Text OSF";
+  font-size: 18px;
+  line-height: 29px;
+  font-weight: normal;
+  color: $text-color;
+}
+
 %no-select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
