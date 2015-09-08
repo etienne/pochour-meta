@@ -21,14 +21,15 @@ ActiveRecord::Schema.define(version: 20150813013616) do
   end
 
   create_table "communities_users", id: false, force: :cascade do |t|
-    t.integer "communities_id"
-    t.integer "users_id"
+    t.integer "community_id"
+    t.integer "user_id"
   end
 
-  add_index "communities_users", ["communities_id"], name: "index_communities_users_on_communities_id"
-  add_index "communities_users", ["users_id"], name: "index_communities_users_on_users_id"
+  add_index "communities_users", ["community_id"], name: "index_communities_users_on_community_id"
+  add_index "communities_users", ["user_id"], name: "index_communities_users_on_user_id"
 
   create_table "users", force: :cascade do |t|
+    t.string   "name"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

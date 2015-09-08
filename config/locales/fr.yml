@@ -6,6 +6,7 @@ fr:
   email: "Courriel"
   forgot_password: "Mot de passe oublié"
   login: "Connectation"
+  name: "Nom"
   password: "Mot de passe"
   password_confirmation: "Mot de passe (encore)"
   sign_out: "Déconnectation"

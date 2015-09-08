@@ -7,8 +7,8 @@ class CreateCommunities < ActiveRecord::Migration
     end
     
     create_table :communities_users, id: false do |t|
-      t.belongs_to :communities, index: true
-      t.belongs_to :users, index: true
+      t.belongs_to :community, index: true
+      t.belongs_to :user, index: true
     end
   end
 end
