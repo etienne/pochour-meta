@@ -67,3 +67,22 @@ header {
     margin-left: 1rem;
   }
 }
+
+a.back {
+  position: relative;
+  font-weight: 100;
+  border-bottom: 1px solid rgba($text-color, 0.5);
+  
+  &:before {
+    position: absolute;
+    left: -1.5rem;
+    content: ' ';
+    display: inline-block;
+    width: 1rem;
+    background: image-url("arrow-left.svg") no-repeat 100% 60%;
+  }
+  
+  &:hover {
+    border-bottom-color: $text-color;
+  }
+}

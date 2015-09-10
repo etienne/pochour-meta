@@ -5,6 +5,7 @@ fr:
   current_password: "Mot de passe actuel"
   email: "Courriel"
   forgot_password: "Mot de passe oublié"
+  home: "Maison"
   login: "Connectation"
   name: "Nom"
   password: "Mot de passe"
