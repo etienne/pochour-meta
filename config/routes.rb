@@ -5,9 +5,11 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root to: "home#index"
-
-  get 'communities/new'
-  get 'communities/create'
+  
+  resources :communities
+  # get 'communities/new'
+  # post 'communities/create'
+  # get 'communities/show/:id' => 'communities#show'
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
