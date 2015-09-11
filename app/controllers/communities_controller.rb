@@ -5,6 +5,7 @@ class CommunitiesController < ApplicationController
 
   def create
     @community = Community.new(community_params)
+    @community.users << current_user
     if @community.save
       redirect_to @community
     else
@@ -14,6 +15,7 @@ class CommunitiesController < ApplicationController
   
   def show
     @community = Community.find(params[:id])
+    authorize @community
   end
   
   private
