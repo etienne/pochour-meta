@@ -2,7 +2,7 @@ form {
   margin-bottom: 2rem;
 }
 
-input, a.button {
+input, a.button, textarea {
   @extend %base-typography;
   border: 2px solid rgba($text-color, 0.2);
   background-color: white;
@@ -10,7 +10,7 @@ input, a.button {
   margin: 0.8rem 0;
 }
 
-input {
+input, textarea {
   width: 100%;
 }
 
@@ -24,7 +24,7 @@ a.button {
   }
 }
 
-input:focus {
+input:focus, textarea:focus {
   outline: none;
   border-color: rgba($text-color, 0.6);
 }

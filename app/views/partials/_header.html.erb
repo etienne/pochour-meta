@@ -7,6 +7,6 @@
       <li><%= link_to t(:sign_out), :destroy_user_session, method: :delete %></li>
     </ul>
   </div>
-  <a href="#" class="button">Écrire dequoi</a>
+  <%= link_to t(:write_something), :new_article, class: :button %>
 </header>
 <% end %>

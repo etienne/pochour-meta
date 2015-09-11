@@ -1,0 +1,23 @@
+<div class="simple_form">
+<%= form_for(@article) do |f| %>
+  <div class="field">
+    (choix des communautés)
+  </div>
+  
+  <div class="field">
+    <%= f.text_field :title, autofocus: true, placeholder: t(:title) %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :body, placeholder: t(:article) %>
+  </div>
+
+  <div class="actions">
+    <% if @article.new_record? %>  
+      <%= f.submit t :create %>
+    <% else %>
+      <%= f.submit t :edit %>
+    <% end %>
+  </div>
+<% end %>
+</div>

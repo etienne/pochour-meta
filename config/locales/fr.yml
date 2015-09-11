@@ -1,5 +1,6 @@
 fr:
   account: "Compte"
+  article: "Article"
   become_cool: "Devenir cool"
   cancel_account: "Supprimer votre compte"
   communities: "Communautés"
@@ -18,4 +19,6 @@ fr:
   public: "Publique"
   sign_out: "Déconnectation"
   sign_up: "Créer un compte"
+  title: "Titre"
   update: "Mettre à jour"
+  write_something: "Écrire quelque chose"

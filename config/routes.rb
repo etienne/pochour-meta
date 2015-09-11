@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: "home#index"
   
   resources :communities
+  resources :articles
   # get 'communities/new'
   # post 'communities/create'
   # get 'communities/show/:id' => 'communities#show'
