@@ -13,6 +13,18 @@ class CommunitiesController < ApplicationController
     end
   end
   
+  def edit
+    @community = Community.find(params[:id])
+    authorize @community
+  end
+  
+  def update
+    community = Community.find(params[:id])
+    authorize community
+    community.update!(community_params)
+    redirect_to community
+  end
+  
   def show
     @community = Community.find(params[:id])
     authorize @community

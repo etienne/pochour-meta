@@ -1,0 +1,22 @@
+<div class="simple_form">
+<%= form_for(@community) do |f| %>
+
+  <div class="field">
+    <%= f.label t :name %>
+    <%= f.email_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label t :public %>
+    <%= f.check_box :public %>
+  </div>
+
+  <div class="actions">
+    <% if @community.new_record? %>  
+      <%= f.submit t :create %>
+    <% else %>
+      <%= f.submit t :edit %>
+    <% end %>
+  </div>
+<% end %>
+</div>

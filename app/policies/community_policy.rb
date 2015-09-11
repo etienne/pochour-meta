@@ -9,4 +9,12 @@ class CommunityPolicy
   def show?
     record.users.include? user or record.public
   end
+  
+  def edit?
+    record.users.include? user
+  end
+
+  def update?
+    edit?
+  end
 end

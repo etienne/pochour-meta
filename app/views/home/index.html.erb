@@ -1,2 +1,12 @@
-<h1>Maison</h1>
-<p><%= link_to 'Créer une communauté', :new_community %></p>
+<h1><%= t :communities %></h1>
+<ul class="communities">
+  <% @communities.each do |community| -%>
+    <li>
+      <h3><%= link_to community.name, community %></h3>
+      <div class="secondary">
+        <%= "#{community.users.count} #{t(:member).pluralize(community.users.count, :fr)}" %>
+      </div>
+    </li>
+  <% end -%>
+</ul>
+<p><%= link_to 'Créer une communauté', :new_community, class: :button %></p>

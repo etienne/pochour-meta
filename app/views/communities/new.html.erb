@@ -1,21 +1,4 @@
-<%= link_to t(:home), :root, class: :back %>
+<%= link_to t(:communities), :root, class: :back %>
 <h1><%= t :create_community %></h1>
 
-<div class="simple_form">
-<%= form_for(@community, url: :communities) do |f| %>
-
-  <div class="field">
-    <%= f.label t :name %>
-    <%= f.email_field :name, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label t :public %>
-    <%= f.check_box :public %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit t :create %>
-  </div>
-<% end %>
-</div>
+<%= render 'form' %>

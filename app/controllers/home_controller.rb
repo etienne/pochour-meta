@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
   def index
-    unless user_signed_in?
-      redirect_to :new_user_session
+    if user_signed_in?
+      @communities = current_user.communities or []
+    else
+      redirect_to :new_user_session 
     end
   end
 end
