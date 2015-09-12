@@ -21,6 +21,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :body, { community_ids: [] })
+    params.require(:article).permit(:title, :body, :community_id)
   end
 end
