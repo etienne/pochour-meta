@@ -1,7 +1,11 @@
 <div class="simple_form">
 <%= form_for(@article) do |f| %>
   <div class="field">
-    (choix des communautés)
+    Publier dans:<br>
+    <% @communities.each do |c| %>
+      <%= f.label c.name %>
+      <%= f.check_box(:community_ids, { multiple: true }, c.id, nil) %>
+    <% end %>
   </div>
   
   <div class="field">
