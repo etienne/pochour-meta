@@ -2,7 +2,7 @@ form {
   margin-bottom: 2rem;
 }
 
-input, a.button, textarea, select {
+input, a.button, textarea, select, .wysihtml5-editor {
   @extend %base-typography;
   border: 2px solid rgba($text-color, 0.2);
   background-color: white;
@@ -24,7 +24,7 @@ a.button {
   }
 }
 
-input:focus, textarea:focus {
+input:focus, textarea:focus, div.wysihtml5-editor:focus {
   outline: none;
   border-color: rgba($text-color, 0.6);
 }
@@ -64,10 +64,11 @@ h1 input {
 }
 
 article {
-  textarea {
+  textarea, .wysihtml5-editor {
     font: inherit;
     line-height: inherit;
-    height: 40rem;
+    min-height: 25rem;
+    outline: none;
   }
   
   input {

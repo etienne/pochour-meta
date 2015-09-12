@@ -13,3 +13,7 @@ article {
     @include span(8 of 12 last);
   }
 }
+
+li article h2 {
+  margin: 0 0 0.4rem;
+}

@@ -11,7 +11,13 @@
   </aside>
   
   <article>
-    <%= f.text_area :body, placeholder: t(:article) %>
+    <div id="toolbar">
+      <a data-wysihtml5-command="bold">bold</a>
+      <a data-wysihtml5-command="italic">italic</a>
+      <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">H2</a>
+      <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="p">P</a>
+    </div>
+    <%= f.text_area :body, id: 'editor' %>
     
     <div class="actions">
       <% if @article.new_record? %>  

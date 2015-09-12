@@ -5,5 +5,5 @@
   <div class="secondary"><%= l @article.created_at, format: :long %></div>
 </aside>
 <article>
-  <%= @article.body %>
+  <%= sanitize @article.body %>
 </article>

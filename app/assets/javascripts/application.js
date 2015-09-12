@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require position-calculator
+//= require wysihtml
 //= require_tree .

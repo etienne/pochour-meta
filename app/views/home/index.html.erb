@@ -2,7 +2,7 @@
 <ul class="communities">
   <% @communities.each do |community| -%>
     <li>
-      <h3><%= link_to community.name, community %></h3>
+      <h2><%= link_to community.name, community %></h2>
       <div class="secondary">
         <%= "#{community.users.count} #{t(:member).pluralize(community.users.count, :fr)}" %>
       </div>

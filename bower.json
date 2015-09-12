@@ -5,6 +5,7 @@
     "Étienne Després <ed@etienne.io>"
   ],
   "dependencies": {
-    "position-calculator": "~>1.1.1"
+    "position-calculator": "~>1.1.1",
+    "wysihtml": "~>0.5.0"
   }
 }
