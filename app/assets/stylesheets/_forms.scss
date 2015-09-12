@@ -2,7 +2,7 @@ form {
   margin-bottom: 2rem;
 }
 
-input, a.button, textarea {
+input, a.button, textarea, select {
   @extend %base-typography;
   border: 2px solid rgba($text-color, 0.2);
   background-color: white;
@@ -55,5 +55,23 @@ div.simple_form {
   @include tablet {
     @include span(4 of 12);
     @include push(4 of 12);
+  }
+}
+
+h1 input {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+article {
+  textarea {
+    font: inherit;
+    line-height: inherit;
+    height: 40rem;
+  }
+  
+  input {
+    width: auto;
+    float: right;
   }
 }

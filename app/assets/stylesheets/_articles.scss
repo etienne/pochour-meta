@@ -1,6 +1,6 @@
 aside {
   @include tablet {
-    @include span(4 of 12);
+    @include span(4 of 12 break first);
     margin-top: 0.35rem;
   }
 }
@@ -10,6 +10,6 @@ article {
   margin-bottom: 2rem;
   
   @include tablet {
-    @include span(4 of 12);
+    @include span(8 of 12 last);
   }
 }

@@ -17,6 +17,7 @@ fr:
   password: "Mot de passe"
   password_confirmation: "Mot de passe (encore)"
   public: "Publique"
+  publish: "Publier"
   sign_out: "Déconnectation"
   sign_up: "Créer un compte"
   title: "Titre"
