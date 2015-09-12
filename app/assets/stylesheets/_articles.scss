@@ -1,11 +1,13 @@
 aside {
   @include tablet {
     @include span(4 of 12);
+    margin-top: 0.35rem;
   }
 }
 
 article {
-  @extend %serif; 
+  @extend %serif;
+  margin-bottom: 2rem;
   
   @include tablet {
     @include span(4 of 12);

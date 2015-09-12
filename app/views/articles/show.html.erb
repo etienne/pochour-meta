@@ -1,4 +1,4 @@
-<%= link_to t(:communities), :root, class: :back %>
+<%= link_to @article.community.name, @article.community, class: :back %>
 <h1><%= @article.title %></h1>
 <aside>
   <div><%= @article.user.name %></div>

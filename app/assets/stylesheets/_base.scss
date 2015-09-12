@@ -58,6 +58,7 @@ ul {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  @extend %base-typography;
   font-weight: 500;
 }
 
@@ -75,9 +76,13 @@ h1 {
 h3 {
   font-size: 19px;
   line-height: 29px;
-  margin: 0.4rem 0;
+  margin: 0 0 0.4rem;
   
   a {
     border-bottom: 2px solid $text-color;
   }
+}
+
+p {
+  margin: 0 0 1rem 0;
 }
