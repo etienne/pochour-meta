@@ -13,5 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require position-calculator.min
+//= require position-calculator
 //= require_tree .

@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'unicorn'
 gem 'devise'
 gem 'pundit'
+gem "bower-rails", "~> 0.10.0"
 
 group :development, :test do
   gem 'byebug'

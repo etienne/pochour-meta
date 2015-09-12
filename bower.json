@@ -1,0 +1,10 @@
+{
+  "name": "pochour-meta",
+  "description": "Prout.",
+  "authors": [
+    "Étienne Després <ed@etienne.io>"
+  ],
+  "dependencies": {
+    "position-calculator": "~>1.1.1"
+  }
+}
