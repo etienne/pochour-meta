@@ -9,7 +9,7 @@
     </aside>
     <article>
       <h2><%= link_to a.title, a %></h2>
-      <p><%= sanitize a.body %></p>
+      <p><%= sanitize truncate_html(a.body, 80) %></p>
     </article>
   </li>
   <% end %>

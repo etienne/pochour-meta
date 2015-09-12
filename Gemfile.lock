@@ -175,6 +175,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  nokogiri
   pundit
   rails (= 4.2.3)
   rails-i18n (~> 4.0.0)
