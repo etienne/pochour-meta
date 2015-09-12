@@ -1,3 +1,9 @@
 <%= link_to t(:communities), :root, class: :back %>
 <h1><%= @article.title %></h1>
-<p><%= @article.body %></p>
+<aside>
+  <div><%= @article.user.name %></div>
+  <div class="secondary"><%= l @article.created_at, format: :long %></div>
+</aside>
+<article>
+  <%= @article.body %>
+</article>

@@ -22,3 +22,6 @@ fr:
   title: "Titre"
   update: "Mettre à jour"
   write_something: "Écrire quelque chose"
+  time:
+    formats:
+      long: "%d %B %Y"

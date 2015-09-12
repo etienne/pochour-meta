@@ -2,6 +2,6 @@
 <h1><%= @community.name %>&nbsp;<%= link_to t(:edit), edit_community_path(@community), class: 'button mini' %></h1>
 <ul>
   <% @community.articles.each do |a| %>
-  <li><%= a.title %></li>
+  <li><%= link_to a.title, a %></li>
   <% end %>
 </ul>

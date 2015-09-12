@@ -1,0 +1,13 @@
+aside {
+  @include tablet {
+    @include span(4 of 12);
+  }
+}
+
+article {
+  @extend %serif; 
+  
+  @include tablet {
+    @include span(4 of 12);
+  }
+}
