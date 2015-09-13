@@ -1,16 +1,19 @@
 <%= link_to t(:communities), :root, class: :back %>
-<h1><%= @community.name %>&nbsp;<%= link_to t(:edit), edit_community_path(@community), class: 'button mini' %></h1>
-<ul>
+<h1><%= @community.name %>&nbsp;<%= link_to t(:edit), edit_community_path(@community), class: 'mini' %></h1>
+<ul class="articles">
   <% @community.articles.each do |a| %>
   <li>
     <aside>
-      <div><%= a.user.name %></div>
-      <div class="secondary"><%= l a.created_at, format: :long %></div>
+      <%= a.user.name %> —
+      <span class="secondary"><%= l a.created_at, format: :long %></span>
+      <h2><%= link_to a.title, a %></h2>
     </aside>
     <article>
-      <h2><%= link_to a.title, a %></h2>
-      <p><%= sanitize truncate_html(a.body, 80) %></p>
+      <%= sanitize truncate_html(a.body, 120) %>
     </article>
   </li>
   <% end %>
 </ul>
+<section class="filters">
+  je suis ben raide le sidebar
+</section>

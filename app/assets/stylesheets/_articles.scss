@@ -7,13 +7,40 @@ aside {
 
 article {
   @extend %serif;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   
   @include tablet {
     @include span(8 of 12 last);
   }
 }
 
-li article h2 {
-  margin: 0 0 0.4rem;
+ul.articles {
+  @include tablet {
+    @include span(8 of 12 first);
+  }
+  
+  aside {
+    @include tablet {
+      @include span(full);
+      margin-top: 0;
+    }
+  }
+  
+  article {
+    @include tablet {
+      @include span(7 of 8);
+      @include pre(1 of 8);
+    }
+  }
+  
+  h2 {
+    margin: 0 0 0.7rem;
+  }
+}
+
+section.filters {
+  @include tablet {
+    @include span(3 of 12 last);
+    @include pre(1 of 12);
+  }
 }
