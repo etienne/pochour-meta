@@ -12,10 +12,10 @@
   
   <article>
     <div id="toolbar">
-      <a data-wysihtml5-command="bold">bold</a>
-      <a data-wysihtml5-command="italic">italic</a>
-      <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">H2</a>
-      <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="p">P</a>
+      <a class="bold" data-wysihtml5-command="bold">B</a>
+      <a class="italic" data-wysihtml5-command="italic">I</a>
+      <a class="heading" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2"><%= t :subtitle %></a>
+      <a class="paragraph" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="p"><%= t :paragraph %></a>
     </div>
     <%= f.text_area :body, id: 'editor' %>
     

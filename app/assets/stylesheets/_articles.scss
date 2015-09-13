@@ -44,3 +44,46 @@ section.filters {
     @include pre(1 of 12);
   }
 }
+
+#toolbar {
+  font-size: 14px;
+  position: absolute;
+  margin-top: -3.2rem;
+  border: 2px solid rgba($text-color, 0.2);
+  
+  a {
+    float: left;
+    padding: 0.3rem 0.9rem;
+    border-left: 2px solid rgba($text-color, 0.2);
+    
+    &.wysihtml5-command-active {
+      background-color: rgba($text-color, 0.2);
+    }
+
+    &:hover {
+      background-color: $text-color;
+      color: $background-color;
+    }
+    
+    &:first-child {
+      border-left: none;
+    }
+
+    &.bold, &.italic {
+      font-size: 16px;
+    }
+        
+    &.bold {
+      font-weight: bold;
+    }
+    
+    &.italic {
+      font-style: italic;
+    }
+    
+    &.heading {
+      @extend %base-typography;
+      line-height: inherit;
+    }
+  }
+}
