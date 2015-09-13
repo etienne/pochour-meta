@@ -1,0 +1,26 @@
+section.epiteths {
+  @include span(4 of 12 first break);
+}
+
+section.comments {
+  @include span(8 of 12 last);
+  
+  li {
+    margin-bottom: 2rem;
+  }
+  
+  div.body {
+    margin-top: 0.2rem;
+    @extend %serif;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+section.epiteths, section.comments {
+  h1 {
+    @include span(full);
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+  }
+}

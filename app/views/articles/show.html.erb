@@ -7,3 +7,32 @@
 <article>
   <%= sanitize @article.body %>
 </article>
+
+<section class="epiteths">
+  <h1><%= t :epiteths %></h1>
+  <p>prout</p>
+</section>
+
+<section class="comments">
+  <h1><%= t :comments %></h1>
+  <% unless @article.comments.blank? %>
+  <ul>
+    <% @article.comments.each do |c| %>
+    <li>
+      <%= c.user.name %> — 
+      <span class="secondary"><%= l c.created_at, format: :long %></span>
+      <div class="body">
+        <p><%= c.body %></p>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+  <% end %>
+  
+  <%= form_for(@comment) do |f| %>
+    <%= f.hidden_field :article_id, value: @article.id %>
+    <%= f.text_area :body %>
+    <%= f.submit t :publish %>
+  <% end %>
+  
+</section>

@@ -7,7 +7,7 @@ aside {
 
 article {
   @extend %serif;
-  margin-bottom: 2.5rem;
+  margin-bottom: 10rem;
   
   @include tablet {
     @include span(8 of 12 last);
@@ -32,6 +32,8 @@ ul.articles {
   }
   
   article {
+    margin-bottom: 2.5rem;
+
     @include tablet {
       @include span(7 of 8);
       @include pre(1 of 8);

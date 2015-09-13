@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   
   resources :communities
   resources :articles
+  resources :comments
   
   # get 'communities/new'
   # post 'communities/create'

@@ -30,6 +30,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     authorize @article
+    @comment = Comment.new
   end
   
   def destroy
