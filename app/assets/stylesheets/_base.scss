@@ -49,11 +49,11 @@ ul {
 .secondary {
   font-weight: 100;
   
-  &.links a {
-    border-bottom: 1px solid rgba($text-color, 0.5);
+  a {
+    border-bottom: $thin-border;
   
     &:hover {
-      border-bottom-color: inherit;
+      border-bottom: $thin-border-hover;
     }
   }
 }

@@ -1,0 +1,4 @@
+<%= link_to t(:communities), :root, class: :back %>
+<h1><%= @user.name %></h1>
+
+<%= render partial: "shared/articles", locals: { entity: @user } %>

@@ -1,0 +1,18 @@
+<ul class="articles">
+  <% entity.articles.each do |a| %>
+  <li>
+    <aside>
+      <% if entity.is_a? User %>
+        <%= a.community.name %> —
+      <% elsif entity.is_a? Community %>
+        <%= a.user.name %> —
+      <% end %>
+      <span class="secondary"><%= l a.created_at, format: :long %></span>
+      <h2><%= link_to a.title, a %></h2>
+    </aside>
+    <article>
+      <%= sanitize truncate_html(a.body, 120) %>
+    </article>
+  </li>
+  <% end %>
+</ul>

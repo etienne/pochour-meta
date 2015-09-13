@@ -1,25 +1,14 @@
 <%= link_to t(:communities), :root, class: :back %>
 <h1><%= @community.name %>&nbsp;<%= link_to t(:edit), edit_community_path(@community), class: 'mini' %></h1>
-<ul class="articles">
-  <% @community.articles.each do |a| %>
-  <li>
-    <aside>
-      <%= a.user.name %> —
-      <span class="secondary"><%= l a.created_at, format: :long %></span>
-      <h2><%= link_to a.title, a %></h2>
-    </aside>
-    <article>
-      <%= sanitize truncate_html(a.body, 120) %>
-    </article>
-  </li>
-  <% end %>
-</ul>
+
+<%= render partial: "shared/articles", locals: { entity: @community } %>
+
 <section class="filters">
   <h3><%= t :authors %></h3>
   <ul>
     <% @community.users.each do |u| %>
     <li>
-      <%= u.name %>
+      <%= link_to u.name, u %>
       <span class="count"><%= u.articles.where(community: @community).size %></span>
     </li>
     <% end %>
