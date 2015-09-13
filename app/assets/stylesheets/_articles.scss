@@ -44,6 +44,14 @@ ul.articles {
 }
 
 section.filters {
+  ul {
+    @extend .secondary;
+    
+    span.count {
+      margin-left: 0.5rem;
+    }
+  }
+  
   @include tablet {
     @include span(3 of 12 last);
     @include pre(1 of 12);

@@ -15,5 +15,13 @@
   <% end %>
 </ul>
 <section class="filters">
-  je suis ben raide le sidebar
+  <h3><%= t :authors %></h3>
+  <ul>
+    <% @community.users.each do |u| %>
+    <li>
+      <%= u.name %>
+      <span class="count"><%= u.articles.where(community: @community).size %></span>
+    </li>
+    <% end %>
+  </ul>
 </section>
