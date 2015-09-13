@@ -20,11 +20,10 @@
     <%= f.text_area :body, id: 'editor' %>
     
     <div class="actions">
-      <%= link_to t(:delete_article), @article, data: { confirm: t(:confirm_delete_article) }, class: 'button-link', method: :delete %>
-
       <% if @article.new_record? %>  
         <%= f.submit t :publish %>
       <% else %>
+        <%= link_to t(:delete_article), @article, data: { confirm: t(:confirm_delete_article) }, class: 'button-link', method: :delete %>
         <%= f.submit t :edit %>
       <% end %>
     </div>
