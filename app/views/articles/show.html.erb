@@ -1,5 +1,5 @@
 <%= link_to @article.community.name, @article.community, class: :back %>
-<h1><%= @article.title %></h1>
+<h1><%= @article.title %>&nbsp;<%= link_to t(:edit), edit_article_path(@article), class: 'mini' %></h1>
 <aside>
   <div><%= @article.user.name %></div>
   <div class="secondary"><%= l @article.created_at, format: :long %></div>

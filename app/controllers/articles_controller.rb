@@ -14,6 +14,19 @@ class ArticlesController < ApplicationController
     end
   end
   
+  def edit
+    @article = Article.find(params[:id])
+    @communities = current_user.communities
+    authorize @article
+  end
+
+  def update
+    article = Article.find(params[:id])
+    authorize article
+    article.update!(article_params)
+    redirect_to article
+  end
+
   def show
     @article = Article.find(params[:id])
     authorize @article
