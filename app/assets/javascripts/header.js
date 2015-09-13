@@ -6,7 +6,6 @@ $(function() {
   
   // Handle account menu
   $('.account-menu').click(function() {
-    console.log('menu');
     $('.account-menu-popup').toggle();
     
     if ($('.account-menu-popup').is(':visible')) {
@@ -30,7 +29,6 @@ $(function() {
   });
   
   $(document).click(function(event) {
-    console.log('document');
     if (!$(event.target).closest('.account-menu-popup, .account-menu').length) {
       if ($('.account-menu-popup').is(":visible")) {
         $('.account-menu-popup').hide()
