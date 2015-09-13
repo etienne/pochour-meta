@@ -32,6 +32,14 @@ class ArticlesController < ApplicationController
     authorize @article
   end
   
+  def destroy
+    @article = Article.find(params[:id])
+    community = @article.community
+    authorize @article
+    @article.destroy
+    redirect_to community
+  end
+  
   private
 
   def article_params

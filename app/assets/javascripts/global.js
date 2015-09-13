@@ -1,5 +1,6 @@
 $(function() {
   if ($('#editor').length) {
+    console.log('init editor');
     window.editor = new wysihtml5.Editor('editor', {
       toolbar: 'toolbar',
       parserRules: wysihtml5ParserRules,

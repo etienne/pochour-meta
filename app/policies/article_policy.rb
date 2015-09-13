@@ -11,10 +11,14 @@ class ArticlePolicy
   end
   
   def edit?
-    record.community.users.include? user
+    record.user == user
   end
 
   def update?
+    edit?
+  end
+  
+  def destroy?
     edit?
   end
 end

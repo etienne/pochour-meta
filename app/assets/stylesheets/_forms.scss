@@ -42,6 +42,16 @@ input[type=submit], a.button {
   }
 }
 
+a.button-link {
+  display: inline-block;
+  margin: 1.3rem 0;
+  border-bottom: 1px solid rgba($text-color, 0.5);
+  
+  &:hover {
+    border-bottom-color: $text-color;
+  }
+}
+
 label {
   display: block;
   margin: 1rem 0 0;

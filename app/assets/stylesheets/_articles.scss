@@ -12,6 +12,10 @@ article {
   @include tablet {
     @include span(8 of 12 last);
   }
+  
+  .actions {
+    @extend %base-typography;
+  }
 }
 
 ul.articles {
@@ -21,7 +25,8 @@ ul.articles {
   
   aside {
     @include tablet {
-      @include span(full);
+      @include span(7 of 8);
+      @include post(1 of 8);
       margin-top: 0;
     }
   }
