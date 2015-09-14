@@ -1,12 +1,26 @@
 <% if user_signed_in? %>
 <header>
-  <span class="light">Salut</span> <span class="account-menu"><%= current_user.name %></span>
-  <div class="account-menu-popup">
+  <span class="secondary">Salut</span>
+  <span class="popup-menu-link" data-popup="account-menu"><%= current_user.name %></span>
+  <div id="account-menu" class="popup-menu">
     <ul>
       <li><%= link_to t(:account), :edit_user_registration %></li>
       <li><%= link_to t(:sign_out), :destroy_user_session, method: :delete %></li>
     </ul>
   </div>
+
+  <% if @current_community %>
+  <span class="popup-menu-link communities" data-popup="communities-menu"><%= @current_community.name %></span>
+  <div id="communities-menu" class="popup-menu">
+    <ul>
+      <% current_user.communities.each do |community| %>
+      <li><%= link_to community.name, community %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  
   <%= link_to t(:write_something), :new_article, class: :button %>
+  
 </header>
 <% end %>

@@ -5,16 +5,18 @@ $(function() {
   }, 1500);
   
   // Handle account menu
-  $('.account-menu').click(function() {
-    $('.account-menu-popup').fadeToggle(100);
+  $('.popup-menu-link').click(function() {
+    $('.popup-menu').fadeOut(100);
+    var popup_menu = $('#' + $(this).attr('data-popup'));
+    popup_menu.fadeToggle(100);
     
-    if ($('.account-menu-popup').is(':visible')) {
-      $('.account-menu-popup').css({
+    if (popup_menu.is(':visible')) {
+      $(popup_menu).css({
         transform: "translate(0, 0)"
       })
       
       var calculator = new $.PositionCalculator({
-        item: $('.account-menu-popup'),
+        item: popup_menu,
         itemAt: "top center",
         target: this,
         targetAt: "bottom center",
@@ -22,16 +24,16 @@ $(function() {
       });
       var position = calculator.calculate();
 
-      $('.account-menu-popup').css({
+      popup_menu.css({
         transform: "translate(" + position.moveBy.x + "px, " + (position.moveBy.y + 14) + "px)"
       })
     }
   });
   
   $(document).click(function(event) {
-    if (!$(event.target).closest('.account-menu-popup, .account-menu').length) {
-      if ($('.account-menu-popup').is(":visible")) {
-        $('.account-menu-popup').fadeOut(200);
+    if (!$(event.target).closest('.popup-menu, .popup-menu-link').length) {
+      if ($('.popup-menu').is(":visible")) {
+        $('.popup-menu').fadeOut(200);
       }
     }
   });

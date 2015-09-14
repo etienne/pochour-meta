@@ -20,7 +20,7 @@ header {
   margin-bottom: 4rem;
   position: relative;
   
-  span.account-menu {
+  span.popup-menu-link {
     @extend %no-select;
     
     margin-right: 1rem;
@@ -41,7 +41,20 @@ header {
     }
   }
   
-  div.account-menu-popup {
+  span.popup-menu-link.communities {
+    margin-left: 2.2rem;
+    
+    &:before {
+      position: absolute;
+      top: 50%;
+      margin: -20px 0 0 -1.2rem;
+      content: "";
+      border-left: 2px solid rgba($text-color, 0.2);
+      height: 40px;
+    }
+  }
+  
+  div.popup-menu {
     @extend %no-select;
 
     text-align: left;

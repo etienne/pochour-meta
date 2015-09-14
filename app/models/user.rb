@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_and_belongs_to_many :communities
+  has_and_belongs_to_many :communities, -> { order "name" }
   has_many :articles
   
   # Include default devise modules. Others available are:
