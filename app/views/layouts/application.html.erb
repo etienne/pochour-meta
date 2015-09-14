@@ -7,14 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-<% unless notice.blank? -%><div class="notice"><%= notice %></div><% end -%>
-<% unless alert.blank? -%><div class="alert"><%= alert %></div><% end -%>
-
-<%= render 'shared/header' %>
-
-<%= yield %>
-
+  <div class="grid-container">
+    <% unless notice.blank? -%><div class="notice"><%= notice %></div><% end -%>
+    <% unless alert.blank? -%><div class="alert"><%= alert %></div><% end -%>
+    <%= render 'shared/header' %>
+    <%= yield %>
+  </div>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, 'data-turbolinks-eval' => false %>
 </body>
 </html>

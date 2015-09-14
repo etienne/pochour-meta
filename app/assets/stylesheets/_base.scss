@@ -4,30 +4,25 @@
 
 html {
   @extend %base-typography;
-  padding-bottom: 10rem;
+  padding-bottom: 12rem;
+  background: image-url("gradient-overlay.jpg") no-repeat;
+  background-size: 100% 100%;
 }
 
 body {
-  margin: 4rem 1rem;
-  
+  margin: 0;
+  padding: 4rem 1rem 8rem;
+  background-color: $background-color;
+  mix-blend-mode: screen;
+}
+
+div.grid-container {
   @include tablet {
     @include container(96%);
   }
   
   @include desktop {
     @include container(960px);
-  }
-  
-  &:after {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: image-url("gradient-overlay.jpg");
-    background-size: 100% 100%;
-    mix-blend-mode: screen;
-    pointer-events: none;
   }
 }
 
