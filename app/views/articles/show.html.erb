@@ -14,7 +14,7 @@
 </section>
 
 <section class="comments">
-  <h1><%= t :comments %></h1>
+  <h1 id="comments"><%= t :comments %></h1>
   <% unless @article.comments.blank? %>
   <ul>
     <% @article.comments.each do |c| %>

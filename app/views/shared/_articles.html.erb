@@ -1,17 +1,22 @@
 <ul class="articles">
-  <% entity.articles.each do |a| %>
+  <% entity.articles.each do |article| %>
   <li>
     <aside>
       <% if entity.is_a? User %>
-        <%= a.community.name %> —
+        <%= article.community.name %> —
       <% elsif entity.is_a? Community %>
-        <%= a.user.name %> —
+        <%= article.user.name %> —
       <% end %>
-      <span class="secondary"><%= l a.created_at, format: :long %></span>
-      <h2><%= link_to a.title, a %></h2>
+      <span class="secondary"><%= l article.created_at, format: :long %></span>
+      <h2><%= link_to article.title, article %></h2>
     </aside>
     <article>
-      <%= sanitize truncate_html(a.body, 120) %>
+      <%= sanitize truncate_html(article.body, 120) %>
+      <% if article.comments.size > 0 %>
+      <div class="reactions">
+        <%= link_to "#{article.comments.size} #{t(:comment).pluralize(article.comments.size, :fr)}", article_path(article, anchor: 'comments') %>
+      </div>
+      <% end %>
     </article>
   </li>
   <% end %>

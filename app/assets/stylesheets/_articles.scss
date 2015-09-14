@@ -38,6 +38,18 @@ ul.articles {
       @include span(7 of 8);
       @include pre(1 of 8);
     }
+    
+    p {
+      margin-bottom: 0.5rem;
+    }
+    
+    div.reactions {
+      @extend %base-typography;
+      
+      a {
+        border-bottom: 1px solid;
+      }
+    }
   }
   
   h2 {
