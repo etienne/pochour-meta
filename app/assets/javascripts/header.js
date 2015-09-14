@@ -6,7 +6,7 @@ $(function() {
   
   // Handle account menu
   $('.account-menu').click(function() {
-    $('.account-menu-popup').toggle();
+    $('.account-menu-popup').fadeToggle(100);
     
     if ($('.account-menu-popup').is(':visible')) {
       $('.account-menu-popup').css({
@@ -23,7 +23,7 @@ $(function() {
       var position = calculator.calculate();
 
       $('.account-menu-popup').css({
-        transform: "translate(" + position.moveBy.x + "px, " + (position.moveBy.y + 4) + "px)"
+        transform: "translate(" + position.moveBy.x + "px, " + (position.moveBy.y + 14) + "px)"
       })
     }
   });
@@ -31,7 +31,7 @@ $(function() {
   $(document).click(function(event) {
     if (!$(event.target).closest('.account-menu-popup, .account-menu').length) {
       if ($('.account-menu-popup').is(":visible")) {
-        $('.account-menu-popup').hide()
+        $('.account-menu-popup').fadeOut(200);
       }
     }
   });
