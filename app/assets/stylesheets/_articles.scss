@@ -3,6 +3,10 @@ aside {
     @include span(4 of 12 break first);
     margin-top: 0.35rem;
   }
+  
+  a {
+    border-bottom: 1px solid;
+  }
 }
 
 article {
@@ -45,6 +49,7 @@ ul.articles {
     
     div.reactions {
       @extend %base-typography;
+      margin-bottom: 1rem;
       
       a {
         border-bottom: 1px solid;

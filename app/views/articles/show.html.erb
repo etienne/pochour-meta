@@ -1,7 +1,7 @@
 <%= link_to @article.community.name, @article.community, class: :back %>
 <h1><%= @article.title %>&nbsp;<%= link_to(t(:edit), edit_article_path(@article), class: 'mini') if policy(@article).edit? %></h1>
 <aside>
-  <div><%= @article.user.name %></div>
+  <div><%= link_to @article.user.name, @article.user %></div>
   <div class="secondary"><%= l @article.created_at, format: :long %></div>
 </aside>
 <article>
@@ -19,7 +19,7 @@
   <ul>
     <% @article.comments.each do |c| %>
     <li>
-      <%= c.user.name %> — 
+      <%= link_to c.user.name, c.user %> — 
       <span class="secondary"><%= l c.created_at, format: :long %></span>
       <div class="body">
         <%= sanitize c.body %>

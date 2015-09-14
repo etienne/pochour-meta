@@ -9,6 +9,10 @@ section.comments {
     margin-bottom: 2rem;
   }
   
+  a {
+    border-bottom: 1px solid;
+  }
+  
   div.body {
     margin-top: 0.2rem;
     @extend %serif;
