@@ -24,6 +24,7 @@ fr:
   password_confirmation: "Mot de passe (encore)"
   public: "Publique"
   publish: "Publier"
+  recent_comments: "Dernières commentations"
   sign_out: "Déconnectation"
   sign_up: "Créer un compte"
   subtitle: "Sous-titre"

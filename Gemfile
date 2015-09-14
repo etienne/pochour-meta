@@ -18,6 +18,7 @@ gem 'devise'
 gem 'pundit'
 gem 'bower-rails', '~> 0.10.0'
 gem 'nokogiri'
+gem 'inflections'
 
 group :development, :test do
   gem 'byebug'
@@ -25,4 +26,3 @@ group :development, :test do
   gem 'spring'
   gem 'faker'
 end
-

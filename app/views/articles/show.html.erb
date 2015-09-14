@@ -22,7 +22,7 @@
       <%= c.user.name %> — 
       <span class="secondary"><%= l c.created_at, format: :long %></span>
       <div class="body">
-        <p><%= c.body %></p>
+        <%= sanitize c.body %>
       </div>
     </li>
     <% end %>

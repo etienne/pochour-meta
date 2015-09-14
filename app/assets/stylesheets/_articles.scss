@@ -46,8 +46,23 @@ ul.articles {
 }
 
 section.filters {
+  & > div {
+    margin-bottom: 3rem;
+  }
+  
+  h3 {
+    margin-bottom: 0.3rem;
+  }
+  
   ul {
     @extend .secondary;
+    
+    font-size: 14px;
+    line-height: 25px;
+    
+    li {
+      margin-bottom: 0.4rem;
+    }
     
     span.count {
       margin-left: 0.5rem;

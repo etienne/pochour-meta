@@ -18,8 +18,10 @@ ActiveRecord::Schema.define(version: 20150913144503) do
     t.text     "body"
     t.integer  "user_id"
     t.integer  "community_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "last_comment_at"
+    t.integer  "comment_count"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "articles", ["community_id"], name: "index_articles_on_community_id"

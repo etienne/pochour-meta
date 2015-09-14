@@ -4,7 +4,7 @@
     <li>
       <h2><%= link_to community.name, community %></h2>
       <div class="secondary">
-        <%= "#{community.users.count} #{t(:member).pluralize(community.users.count, :fr)}" %>
+        <%= "#{community.users.size} #{t(:member).pluralize(community.users.size, :fr)}" %>
       </div>
     </li>
   <% end -%>
