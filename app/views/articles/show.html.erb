@@ -1,5 +1,5 @@
 <%= link_to @article.community.name, @article.community, class: :back %>
-<h1><%= @article.title %>&nbsp;<%= link_to(t(:edit), edit_article_path(@article), class: 'mini') if policy(@article).edit? %></h1>
+<h1><%= best_in_place_if policy(@article).edit?, @article, :title, as: :textarea, activator: '#edit-title', html_attrs: { rows: 1 } %>&nbsp;<%= link_to(t(:edit), edit_article_path(@article), id: 'edit-title', class: 'mini') if policy(@article).edit? %></h1>
 <aside>
   <div><%= link_to @article.user.name, @article.user %></div>
   <div class="secondary"><%= l @article.created_at, format: :long %></div>

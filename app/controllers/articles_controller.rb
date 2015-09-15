@@ -21,10 +21,18 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    article = Article.find(params[:id])
-    authorize article
-    article.update!(article_params)
-    redirect_to article
+    @article = Article.find(params[:id])
+    authorize @article
+    
+    respond_to do |format|
+      if @article.update_attributes(article_params)
+        format.html { redirect_to @article }
+        format.json { respond_with_bip(@article) }
+      else
+        format.html { render action: "edit" }
+        format.json { respond_with_bip(@article) }
+      end
+    end
   end
 
   def show

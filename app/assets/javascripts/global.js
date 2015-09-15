@@ -1,4 +1,8 @@
 $(function() {
+  // Activate in-place editor
+  $(".best_in_place").best_in_place();
+  
+  // Activate WYSIWYG editor
   if ($('#editor').length) {
     console.log('init editor');
     window.editor = new wysihtml5.Editor('editor', {
