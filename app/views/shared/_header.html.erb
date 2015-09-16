@@ -4,14 +4,19 @@
   <span class="popup-menu-link communities" data-popup="communities-menu"><%= @current_community.name %></span>
   <div id="communities-menu" class="popup-menu">
     <ul>
-      <li><%= link_to t(:home), @community %></li>
-      <li class="separator-after"><%= link_to t(:settings), edit_community_path(@community) %></li>
-      <% current_user.communities.each do |community| %>
-        <% unless community == @community %>
-          <li><%= link_to community.name, community %></li>
+      <li><%= link_to t(:home), @current_community %></li>
+      <li class="separator-after"><%= link_to t(:settings), edit_community_path(@current_community) %></li>
+      <% if current_user.communities.size > 1 %>
+        <% current_user.communities.each do |community| %>
+          <% unless community == @current_community %>
+            <li><%= link_to community.name, community %></li>
+          <% end %>
         <% end %>
+      <li class="separator-before">
+      <% else %>
+      <li>
       <% end %>
-      <li class="separator-before"><%= link_to t(:new_community), :new_community %></li>
+      <%= link_to t(:new_community), :new_community %></li>
     </ul>
   </div>
   <% end %>

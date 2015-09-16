@@ -4,20 +4,22 @@
 
 <section class="filters">
   <div>
-    <%= link_to t(:new_article), :new_article, class: :button %>
+    <%= link_to t(:new_article), new_article_path(community_id: @community.id), class: :button %>
   </div>
   
-  <div>
-    <h3><%= t :recent_comments %></h3>
-    <ul>
-      <% @community.articles.recently_commented.each do |article| %>
-      <li>
-        <%= link_to article.title, article_path(article, anchor: 'comments') %>&nbsp;<span class="count"><%= article.comment_count %></span>
-      </li>
-      <% end %>
-    </ul>
-  </div>
-
+  <% if @community.articles.recently_commented.size > 0 %>
+    <div>
+      <h3><%= t :recent_comments %></h3>
+      <ul>
+        <% @community.articles.recently_commented.each do |article| %>
+        <li>
+          <%= link_to article.title, article_path(article, anchor: 'comments') %>&nbsp;<span class="count"><%= article.comment_count %></span>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
   <div>
     <h3><%= t :authors %></h3>
     <ul>

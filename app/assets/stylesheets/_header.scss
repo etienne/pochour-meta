@@ -51,6 +51,10 @@ header {
       border-left: 2px solid rgba($text-color, 0.2);
       height: 40px;
     }
+    
+    &:first-child:before {
+      border: none;
+    }
   }
   
   div.popup-menu {
@@ -61,6 +65,7 @@ header {
     position: absolute;
     padding: 2px 0;
     border: 2px solid rgba($text-color, 0.2);
+    background-color: $background-color;
     
     li {
       padding: 0 2px;

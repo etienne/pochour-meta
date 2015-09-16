@@ -23,6 +23,7 @@ fr:
   name: "Nom"
   new_article: "Écrire un nouvel article"
   new_community: "Nouvelle communauté"
+  nothing: "Rien"
   paragraph: "Paragraphe"
   password: "Mot de passe"
   password_confirmation: "Mot de passe (encore)"

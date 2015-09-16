@@ -1,6 +1,8 @@
+<%= link_to @current_community.name, @current_community, class: :back %>
+
 <%= form_for(@article) do |f| %>
-  Publier dans <%= f.collection_select(:community_id, @communities, :id, :name) %>
-  
+  <%= f.hidden_field :community_id, value: @current_community.id %>
+
   <h1>
     <%= f.text_field :title, autofocus: true, placeholder: t(:title) %>
   </h1>

@@ -1,11 +1,13 @@
 class ArticlesController < ApplicationController
   def new
     @article = Article.new
-    @communities = current_user.communities
+    @current_community = params[:community_id] ? Community.find(params[:community_id]) : current_user.communities.first
+    authorize @current_community, :edit?
   end
 
   def create
     @article = Article.new(article_params)
+    authorize @article.community
     @article.user = current_user
     if @article.save
       redirect_to @article
@@ -38,6 +40,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     authorize @article
+    @current_community = @article.community
     @comment = Comment.new
   end
   
