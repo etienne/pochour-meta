@@ -1,26 +1,27 @@
 <% if user_signed_in? %>
 <header>
-  <span class="secondary">Salut</span>
-  <span class="popup-menu-link" data-popup="account-menu"><%= current_user.name %></span>
+  <% if @current_community %>
+  <span class="popup-menu-link communities" data-popup="communities-menu"><%= @current_community.name %></span>
+  <div id="communities-menu" class="popup-menu">
+    <ul>
+      <li><%= link_to t(:home), @community %></li>
+      <li class="separator-after"><%= link_to t(:settings), edit_community_path(@community) %></li>
+      <% current_user.communities.each do |community| %>
+        <% unless community == @community %>
+          <li><%= link_to community.name, community %></li>
+        <% end %>
+      <% end %>
+      <li class="separator-before"><%= link_to t(:new_community), :new_community %></li>
+    </ul>
+  </div>
+  <% end %>
+
+  <span class="popup-menu-link account" data-popup="account-menu"><%= current_user.name %></span>
   <div id="account-menu" class="popup-menu">
     <ul>
       <li><%= link_to t(:account), :edit_user_registration %></li>
       <li><%= link_to t(:sign_out), :destroy_user_session, method: :delete %></li>
     </ul>
   </div>
-
-  <% if @current_community %>
-  <span class="popup-menu-link communities" data-popup="communities-menu"><%= @current_community.name %></span>
-  <div id="communities-menu" class="popup-menu">
-    <ul>
-      <% current_user.communities.each do |community| %>
-      <li><%= link_to community.name, community %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
-  
-  <%= link_to t(:write_something), :new_article, class: :button %>
-  
 </header>
 <% end %>

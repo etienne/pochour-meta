@@ -28,8 +28,7 @@ header {
     
     &:after {
       position: absolute;
-      top: 1.4rem;
-      content: ' ';
+      content: " ";
       display: inline-block;
       width: 1rem;
       padding-left: 0.1rem;
@@ -41,7 +40,7 @@ header {
     }
   }
   
-  span.popup-menu-link.communities {
+  span.popup-menu-link.account {
     margin-left: 2.2rem;
     
     &:before {
@@ -60,8 +59,24 @@ header {
     text-align: left;
     display: none;
     position: absolute;
-    padding: 0.2rem;
+    padding: 2px 0;
     border: 2px solid rgba($text-color, 0.2);
+    
+    li {
+      padding: 0 2px;
+      
+      &.separator-after {
+        margin-bottom: 2px;
+        padding-bottom: 2px;
+        border-bottom: 2px solid rgba($text-color, 0.1);
+      }
+      
+      &.separator-before {
+        margin-top: 2px;
+        padding-top: 2px;
+        border-top: 2px solid rgba($text-color, 0.1);
+      }
+    }
     
     a {
       display: block;

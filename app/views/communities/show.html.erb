@@ -1,9 +1,12 @@
-<%= link_to t(:communities), :root, class: :back %>
-<h1><%= @community.name %>&nbsp;<%= link_to t(:edit), edit_community_path(@community), class: 'mini' %></h1>
+<h1><%= @community.name %></h1>
 
 <%= render partial: "shared/articles", locals: { entity: @community } %>
 
 <section class="filters">
+  <div>
+    <%= link_to t(:new_article), :new_article, class: :button %>
+  </div>
+  
   <div>
     <h3><%= t :recent_comments %></h3>
     <ul>
