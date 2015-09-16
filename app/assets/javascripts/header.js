@@ -5,7 +5,7 @@ $(function() {
   }, 1500);
   
   // Handle account menu
-  $('.popup-menu-link').click(function() {
+  $('.popup-menu-link').mousedown(function() {
     $('.popup-menu').fadeOut(100);
     var popup_menu = $('#' + $(this).attr('data-popup'));
     popup_menu.fadeToggle(100);
@@ -30,7 +30,7 @@ $(function() {
     }
   });
   
-  $(document).click(function(event) {
+  $(document).mousedown(function(event) {
     if (!$(event.target).closest('.popup-menu, .popup-menu-link').length) {
       if ($('.popup-menu').is(":visible")) {
         $('.popup-menu').fadeOut(200);
