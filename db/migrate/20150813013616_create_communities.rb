@@ -3,8 +3,11 @@ class CreateCommunities < ActiveRecord::Migration
     create_table :communities do |t|
       t.string :name
       t.boolean :public
+      t.string :slug
       t.timestamps null: false
     end
+    
+    add_index :communities, :slug, unique: true
     
     create_table :communities_users, id: false do |t|
       t.belongs_to :community, index: true

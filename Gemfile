@@ -20,6 +20,7 @@ gem 'bower-rails', '~> 0.10.0'
 gem 'nokogiri'
 gem 'inflections'
 gem 'best_in_place', '~> 3.0.1'
+gem 'friendly_id', '~> 5.1.0'
 
 group :development, :test do
   gem 'byebug'

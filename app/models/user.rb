@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :finders]
+
   has_and_belongs_to_many :communities, -> { order "name" }
   has_many :articles
   

@@ -1,4 +1,7 @@
 class Article < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :finders]
+
   belongs_to :user
   belongs_to :community
   has_many :comments, -> { order "created_at" }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150913144503) do
+ActiveRecord::Schema.define(version: 20150916005014) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -20,11 +20,13 @@ ActiveRecord::Schema.define(version: 20150913144503) do
     t.integer  "community_id"
     t.datetime "last_comment_at"
     t.integer  "comment_count"
+    t.string   "slug"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
   add_index "articles", ["community_id"], name: "index_articles_on_community_id"
+  add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true
   add_index "articles", ["user_id"], name: "index_articles_on_user_id"
 
   create_table "comments", force: :cascade do |t|
@@ -41,9 +43,12 @@ ActiveRecord::Schema.define(version: 20150913144503) do
   create_table "communities", force: :cascade do |t|
     t.string   "name"
     t.boolean  "public"
+    t.string   "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "communities", ["slug"], name: "index_communities_on_slug", unique: true
 
   create_table "communities_users", id: false, force: :cascade do |t|
     t.integer "community_id"
@@ -52,6 +57,19 @@ ActiveRecord::Schema.define(version: 20150913144503) do
 
   add_index "communities_users", ["community_id"], name: "index_communities_users_on_community_id"
   add_index "communities_users", ["user_id"], name: "index_communities_users_on_user_id"
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -65,11 +83,13 @@ ActiveRecord::Schema.define(version: 20150913144503) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "slug"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["slug"], name: "index_users_on_slug", unique: true
 
 end
