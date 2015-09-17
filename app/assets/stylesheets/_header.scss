@@ -128,7 +128,7 @@ header {
 
 a.back {
   @extend .secondary;
-  position: relative;
+  position: absolute;
   border-bottom: $thin-border;
   
   &:before {

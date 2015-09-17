@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 50px;
   line-height: 64px;
-  margin: 0.5rem 0 8rem;
+  margin: 2rem 0 8rem;
 
   @include tablet {
     @include span(8 of 12);
