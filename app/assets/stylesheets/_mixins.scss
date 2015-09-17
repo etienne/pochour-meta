@@ -29,6 +29,18 @@ $desktop-width: 1024px;
   color: $text-color;
 }
 
+%highlight {
+  background-color: $text-color;
+  color: $background-color;
+  border-color: $text-color;
+}
+
+%highlight-padded {
+  @extend %highlight;
+  padding: 1px 0;
+  box-shadow: 0.15em 0 0 $text-color, -0.15em 0 0 $text-color;
+}
+
 %no-select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;

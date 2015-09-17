@@ -44,6 +44,8 @@ ul {
     border-bottom: $thin-border;
   
     &:hover {
+      padding: 1px 0;
+      @extend %highlight-padded;
       border-bottom: $thin-border-hover;
     }
   }
@@ -74,8 +76,7 @@ h2 {
     border-bottom: 2px solid $text-color;
     
     &:hover {
-      background-color: $text-color;
-      color: $background-color;
+      @extend %highlight-padded;
     }
   }
 }

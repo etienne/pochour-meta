@@ -85,11 +85,10 @@ header {
     
     a {
       display: block;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 1rem;
 
       &:hover {
-        background-color: $text-color;
-        color: $background-color;
+        @extend %highlight;
       }
     }
 
@@ -128,8 +127,8 @@ header {
 }
 
 a.back {
+  @extend .secondary;
   position: relative;
-  font-weight: 100;
   border-bottom: $thin-border;
   
   &:before {
@@ -142,6 +141,7 @@ a.back {
   }
   
   &:hover {
+    @extend %highlight-padded;
     border-bottom: $thin-border-hover;
   }
 }

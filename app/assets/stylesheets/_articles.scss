@@ -6,6 +6,10 @@ aside {
   
   a {
     border-bottom: 1px solid;
+    
+    &:hover {
+      @extend %highlight-padded;
+    }
   }
 }
 
@@ -113,8 +117,7 @@ section.filters {
     }
 
     &:hover {
-      background-color: $text-color;
-      color: $background-color;
+      @extend %highlight;
     }
     
     &:first-child {

@@ -37,8 +37,7 @@ input[type=submit], a.button {
   text-align: center;
   
   &:hover {
-    color: $background-color;
-    background-color: $text-color;
+    @extend %highlight;
     border-color: $text-color;
   }
 }
