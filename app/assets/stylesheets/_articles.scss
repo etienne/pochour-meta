@@ -118,6 +118,10 @@ section.filters {
     
     &.wysihtml5-command-active {
       background-color: rgba($text-color, 0.2);
+      
+      &:hover {
+        @extend %highlight;
+      }
     }
 
     &:hover {
