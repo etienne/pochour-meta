@@ -18,9 +18,11 @@
   <% unless @article.comments.blank? %>
   <ul>
     <% @article.comments.each do |c| %>
-    <li>
-      <%= link_to c.user.name, c.user %> — 
-      <span class="secondary"><%= l c.created_at, format: :long %></span>
+    <li id="comment-id-<%= c.id %>">
+      <span class="metadata">
+        <%= link_to c.user.name, c.user %> — 
+        <span class="secondary"><%= l c.created_at, format: :long %></span>
+      </span>
       <div class="body">
         <%= sanitize c.body %>
       </div>

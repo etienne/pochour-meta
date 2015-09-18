@@ -7,11 +7,11 @@ div.notice, div.alert {
   text-align: center;
 }
 
-div.alert {
+.alert {
   background: $yellow;
 }
 
-div.notice {
+.notice {
   background: #F6F1A9;
 }
 
@@ -48,7 +48,7 @@ header {
       top: 50%;
       margin: -20px 0 0 -1.2rem;
       content: "";
-      border-left: 2px solid rgba($text-color, 0.2);
+      border-left: 1px solid rgba($text-color, 0.5);
       height: 40px;
     }
     

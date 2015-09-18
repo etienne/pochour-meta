@@ -1,12 +1,24 @@
 section.epiteths {
-  @include span(4 of 12 first break);
+  @include tablet {
+    @include span(4 of 12 first break);
+  }
 }
 
 section.comments {
-  @include span(8 of 12 last);
+  @include tablet {
+    @include span(8 of 12 last);
+  }
+  
+  ul {
+    clear: both;
+  }
   
   li {
     margin-bottom: 2rem;
+    
+    &.highlighted .metadata {
+      @extend .notice;
+    }
   }
   
   a {
@@ -15,6 +27,10 @@ section.comments {
     &:hover {
       @extend %highlight-padded;
     }
+  }
+  
+  span.metadata {
+    transition: background-color 1.5s;
   }
   
   div.body {
