@@ -57,6 +57,10 @@ ul.articles {
       
       a {
         border-bottom: 1px solid;
+        
+        &:hover {
+          @extend %highlight-padded;
+        }
       }
     }
   }

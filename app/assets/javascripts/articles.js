@@ -4,6 +4,6 @@ $(function() {
     $(window.location.hash).addClass('highlighted')
     setTimeout(function () {
       $(window.location.hash).removeClass('highlighted')
-    }, 2500);
+    }, 2000);
   }
 })

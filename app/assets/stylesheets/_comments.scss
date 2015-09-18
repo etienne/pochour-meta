@@ -15,8 +15,9 @@ section.comments {
   
   li {
     margin-bottom: 2rem;
+    transition: background-color 1.5s;
     
-    &.highlighted .metadata {
+    &.highlighted {
       @extend .notice;
     }
   }
@@ -29,15 +30,23 @@ section.comments {
     }
   }
   
-  span.metadata {
-    transition: background-color 1.5s;
+  div.body, textarea {
+    @extend %serif;
+    font-size: 14px;
+    line-height: 24px;
   }
   
   div.body {
     margin-top: 0.2rem;
-    @extend %serif;
-    font-size: 14px;
-    line-height: 24px;
+  }
+  
+  textarea {
+    height: 12rem;
+  }
+  
+  input[type=submit] {
+    width: auto;
+    margin-top: 0;
   }
 }
 

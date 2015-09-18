@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     authorize @comment.article, :show?
     @comment.user = current_user
     @comment.save
-    redirect_to @comment.article
+    redirect_to article_path(@comment.article, anchor: "comment-id-#{@comment.id}")
   end
   
   private
