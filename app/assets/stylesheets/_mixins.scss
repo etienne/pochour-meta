@@ -27,6 +27,7 @@ $desktop-width: 1024px;
   line-height: 29px;
   font-weight: normal;
   color: $text-color;
+  -webkit-font-smoothing: antialiased;
 }
 
 %highlight {
