@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :communities
   resources :articles
   resources :comments
+  resources :epiteth_votes
   
   # get 'communities/new'
   # post 'communities/create'

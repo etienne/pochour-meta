@@ -43,6 +43,7 @@ class ArticlesController < ApplicationController
     authorize @article
     @current_community = @article.community
     @comment = Comment.new
+    @epiteth_vote = EpitethVote.new
   end
   
   def destroy

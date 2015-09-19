@@ -5,6 +5,7 @@ class Article < ActiveRecord::Base
   belongs_to :user
   belongs_to :community
   has_many :comments, -> { order "created_at" }
+  has_many :epiteth_votes
   scope :recently_commented, -> { where.not(last_comment_at: nil).order("last_comment_at DESC").limit(12) }
   
   def update_comment_metadata

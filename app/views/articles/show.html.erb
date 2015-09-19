@@ -10,7 +10,18 @@
 
 <section class="epiteths">
   <h1><%= t :epiteths %></h1>
-  <p>prout</p>
+  <p>
+    <% @article.epiteth_votes.each do |epiteth_vote| %>
+      <%= epiteth_vote.epiteth.name %>, 
+    <% end %>
+  </p>
+  <%= form_for(@epiteth_vote) do |f| %>
+    <%= f.hidden_field :article_id, value: @article.id %>
+    <%= f.fields_for :epiteth do |epiteth_form| %>
+      <%= epiteth_form.text_field :name %>
+    <% end %>
+    <%= f.submit t :submit %>
+  <% end %>
 </section>
 
 <section class="comments">
