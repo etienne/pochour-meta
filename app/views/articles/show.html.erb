@@ -11,8 +11,8 @@
 <section class="epiteths">
   <h1><%= t :epiteths %></h1>
   <p>
-    <% @article.epiteth_votes.each do |epiteth_vote| %>
-      <%= epiteth_vote.epiteth.name %>, 
+    <% @article.epiteths_with_counts.each do |epiteth_array| %>
+      <%= epiteth_array.first.name %><span class="count"><%= epiteth_array.second %>,
     <% end %>
   </p>
   <%= form_for(@epiteth_vote) do |f| %>

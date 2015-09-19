@@ -11,4 +11,11 @@ class Article < ActiveRecord::Base
   def update_comment_metadata
     update!(comment_count: comments.size, last_comment_at: comments.last.created_at)
   end
+  
+  def epiteths_with_counts
+    # Probably needs optimization.
+    epiteth_votes.group(:epiteth_id).count.map do |epiteth_array|
+      [Epiteth.find(epiteth_array.first), epiteth_array.second]
+    end
+  end
 end
