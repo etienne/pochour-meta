@@ -5,7 +5,7 @@ class EpitethVotesController < ApplicationController
     @epiteth_vote = EpitethVote.new(epiteth_vote_params)
     @epiteth_vote.user = current_user
     @epiteth_vote.epiteth = Epiteth.find_or_create_by(name: params[:epiteth_vote][:epiteth][:name].downcase)
-    @epiteth_vote.save
+    @epiteth_vote.save!
     redirect_to article
   end
   
