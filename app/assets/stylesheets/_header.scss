@@ -57,68 +57,6 @@ header {
     }
   }
   
-  div.popup-menu {
-    @extend %no-select;
-
-    text-align: left;
-    display: none;
-    position: absolute;
-    padding: 2px 0;
-    border: 2px solid rgba($text-color, 0.2);
-    background-color: $background-color;
-    
-    li {
-      padding: 0 2px;
-      
-      &.separator-after {
-        margin-bottom: 2px;
-        padding-bottom: 2px;
-        border-bottom: 2px solid rgba($text-color, 0.1);
-      }
-      
-      &.separator-before {
-        margin-top: 2px;
-        padding-top: 2px;
-        border-top: 2px solid rgba($text-color, 0.1);
-      }
-    }
-    
-    a {
-      display: block;
-      padding: 0.4rem 1rem;
-
-      &:hover {
-        @extend %highlight;
-      }
-    }
-
-    &:before {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      margin-left: -10px;
-      content: "";
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 10px 10px 10px;
-      border-color: transparent transparent rgba($text-color, 0.2) transparent;
-    }
-    
-    &:after {
-      position: absolute;
-      top: -9px;
-      left: 50%;
-      margin-left: -10px;
-      content: "";
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 10px 10px 10px;
-      border-color: transparent transparent white transparent;
-    }
-  }
-  
   a.button {
     display: inline-block;
     width: auto;
