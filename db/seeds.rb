@@ -50,3 +50,17 @@ end
     created_at: Faker::Date.between(article.created_at, Date.today)
   )
 end
+
+# Epiteths
+15.times do |i|
+  Epiteth.create(name: Faker::Lorem.word)
+end
+
+# Epiteth Votes
+30.times do |i|
+  EpitethVote.create(
+    user_id: rand(1...10),
+    article_id: rand(1...25),
+    epiteth_id: rand(1...15)
+  )
+end
