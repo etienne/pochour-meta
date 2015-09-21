@@ -12,16 +12,22 @@
   <h1><%= t :epiteths %></h1>
   <ul>
     <% @article.epiteths_with_counts.each do |epiteth_array| %>
-      <li><%= epiteth_array.first.name %><span class="count"><%= epiteth_array.second %></span></li>
+      <li<%= " class=selected" if @epiteth_vote_ids_by_current_user.include? epiteth_array.first.id %> data-id="<%= epiteth_array.first.id %>">
+        <%= epiteth_array.first.name %><span class="count"><%= epiteth_array.second %></span>
+      </li>
     <% end %>
+    <li class="popup-menu-link add" data-popup="epiteths-menu">+</li>
   </ul>
-  <%= form_for(@epiteth_vote) do |f| %>
-    <%= f.hidden_field :article_id, value: @article.id %>
-    <%= f.fields_for :epiteth do |epiteth_form| %>
-      <%= epiteth_form.text_field :name %>
+  
+  <div id="epiteths-menu" class="popup-menu">
+    <%= form_for(@epiteth_vote) do |f| %>
+      <%= f.hidden_field :article_id, value: @article.id %>
+      <%= f.fields_for :epiteth do |epiteth_form| %>
+        <%= epiteth_form.text_field :name %>
+      <% end %>
+      <%= f.submit t :submit %>
     <% end %>
-    <%= f.submit t :submit %>
-  <% end %>
+  </div>
 </section>
 
 <section class="comments">
