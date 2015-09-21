@@ -10,11 +10,11 @@
 
 <section class="epiteths">
   <h1><%= t :epiteths %></h1>
-  <p>
+  <ul>
     <% @article.epiteths_with_counts.each do |epiteth_array| %>
-      <%= epiteth_array.first.name %><span class="count"><%= epiteth_array.second %>,
+      <li><%= epiteth_array.first.name %><span class="count"><%= epiteth_array.second %></span></li>
     <% end %>
-  </p>
+  </ul>
   <%= form_for(@epiteth_vote) do |f| %>
     <%= f.hidden_field :article_id, value: @article.id %>
     <%= f.fields_for :epiteth do |epiteth_form| %>
