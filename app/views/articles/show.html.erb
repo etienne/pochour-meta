@@ -11,9 +11,9 @@
 <section class="epiteths">
   <h1><%= t :epiteths %></h1>
   <ul>
-    <% @article.epiteths_with_counts.each do |epiteth_array| %>
-      <li<%= " class=selected" if @epiteth_vote_ids_by_current_user.include? epiteth_array.first.id %> data-id="<%= epiteth_array.first.id %>">
-        <%= epiteth_array.first.name %><span class="count"><%= epiteth_array.second %></span>
+    <% @article.epiteths_with_counts.each do |epiteth_hash| %>
+      <li<%= " class=selected" if @epiteth_vote_ids_by_current_user.include? epiteth_hash[:epiteth].id %> data-id="<%= epiteth_hash[:epiteth].id %>">
+        <%= epiteth_hash[:epiteth].name %><span class="count"><%= epiteth_hash[:count] %></span>
       </li>
     <% end %>
     <li class="popup-menu-link add" data-popup="epiteths-menu">+</li>

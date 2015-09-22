@@ -62,6 +62,11 @@ ul.articles {
           @extend %highlight-padded;
         }
       }
+      
+      span.epiteths {
+        @extend .secondary;
+        margin-left: 0.5rem;
+      }
     }
   }
   

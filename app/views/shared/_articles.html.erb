@@ -16,6 +16,7 @@
         <% if article.comments.size > 0 %>
         <div class="reactions">
           <%= link_to "#{article.comments.size} #{t(:comment).pluralize(article.comments.size, :fr)}", article_path(article, anchor: 'comments') %>
+          <span class="epiteths"><%= article.epiteths_sentence %></span>
         </div>
         <% end %>
       </article>
