@@ -20,12 +20,7 @@ class Article < ActiveRecord::Base
   end
   
   def epithets_sentence
-    epithet_names = epithet_votes.map {|e| e.epithet.name}
-    if epithet_names.size > 4
-      sentence_fragments = epithet_names[0..2] << I18n.t(:other_epithets, count: epithet_names.size - 3)
-    else
-      sentence_fragments = epithet_names
-    end
-    sentence_fragments.to_sentence.capitalize
+    epithet_names = epithet_votes.map {|e| e.epithet.name}[0..2].to_sentence.capitalize
+    epithet_names << " (#{I18n.t(:among_others)})" if epithet_votes.size > 3
   end
 end
