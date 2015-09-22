@@ -1,4 +1,4 @@
-section.epiteths {
+section.epithets {
   @include tablet {
     @include span(4 of 12 first break);
   }
@@ -50,7 +50,7 @@ section.comments {
   }
 }
 
-section.epiteths, section.comments {
+section.epithets, section.comments {
   h1 {
     @include span(full);
     font-size: 24px;

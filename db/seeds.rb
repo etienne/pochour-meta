@@ -51,16 +51,16 @@ end
   )
 end
 
-# Epiteths
+# Epithets
 15.times do |i|
-  Epiteth.create(name: Faker::Lorem.word)
+  Epithet.create(name: Faker::Lorem.word)
 end
 
-# Epiteth Votes
+# Epithet Votes
 30.times do |i|
-  EpitethVote.create(
+  EpithetVote.create(
     user_id: rand(1...10),
     article_id: rand(1...25),
-    epiteth_id: rand(1...15)
+    epithet_id: rand(1...15)
   )
 end

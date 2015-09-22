@@ -58,19 +58,19 @@ ActiveRecord::Schema.define(version: 20150919010754) do
   add_index "communities_users", ["community_id"], name: "index_communities_users_on_community_id"
   add_index "communities_users", ["user_id"], name: "index_communities_users_on_user_id"
 
-  create_table "epiteth_votes", force: :cascade do |t|
-    t.integer  "epiteth_id"
+  create_table "epithet_votes", force: :cascade do |t|
+    t.integer  "epithet_id"
     t.integer  "article_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "epiteth_votes", ["article_id"], name: "index_epiteth_votes_on_article_id"
-  add_index "epiteth_votes", ["epiteth_id"], name: "index_epiteth_votes_on_epiteth_id"
-  add_index "epiteth_votes", ["user_id"], name: "index_epiteth_votes_on_user_id"
+  add_index "epithet_votes", ["article_id"], name: "index_epithet_votes_on_article_id"
+  add_index "epithet_votes", ["epithet_id"], name: "index_epithet_votes_on_epithet_id"
+  add_index "epithet_votes", ["user_id"], name: "index_epithet_votes_on_user_id"
 
-  create_table "epiteths", force: :cascade do |t|
+  create_table "epithets", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

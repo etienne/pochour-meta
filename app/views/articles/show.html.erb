@@ -8,22 +8,22 @@
   <%= sanitize @article.body %>
 </article>
 
-<section class="epiteths">
-  <h1><%= t :epiteths %></h1>
+<section class="epithets">
+  <h1><%= t :epithets %></h1>
   <ul>
-    <% @article.epiteths_with_counts.each do |epiteth_hash| %>
-      <li<%= " class=selected" if @epiteth_vote_ids_by_current_user.include? epiteth_hash[:epiteth].id %> data-id="<%= epiteth_hash[:epiteth].id %>">
-        <%= epiteth_hash[:epiteth].name %><span class="count"><%= epiteth_hash[:count] %></span>
+    <% @article.epithets_with_counts.each do |epithet_hash| %>
+      <li<%= " class=selected" if @epithet_vote_ids_by_current_user.include? epithet_hash[:epithet].id %> data-id="<%= epithet_hash[:epithet].id %>">
+        <%= epithet_hash[:epithet].name %><span class="count"><%= epithet_hash[:count] %></span>
       </li>
     <% end %>
-    <li class="popup-menu-link add" data-popup="epiteths-menu">+</li>
+    <li class="popup-menu-link add" data-popup="epithets-menu">+</li>
   </ul>
   
-  <div id="epiteths-menu" class="popup-menu">
-    <%= form_for(@epiteth_vote) do |f| %>
+  <div id="epithets-menu" class="popup-menu">
+    <%= form_for(@epithet_vote) do |f| %>
       <%= f.hidden_field :article_id, value: @article.id %>
-      <%= f.fields_for :epiteth do |epiteth_form| %>
-        <%= epiteth_form.text_field :name %>
+      <%= f.fields_for :epithet do |epithet_form| %>
+        <%= epithet_form.text_field :name %>
       <% end %>
       <%= f.submit t :submit %>
     <% end %>
