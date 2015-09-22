@@ -18,7 +18,7 @@ section.comments {
     transition: background-color 1.5s;
     
     &.highlighted {
-      @extend .notice;
+      @extend %highlighted;
     }
   }
   
@@ -26,7 +26,7 @@ section.comments {
     border-bottom: 1px solid;
     
     &:hover {
-      @extend %highlight-padded;
+      @extend %highlighted;
     }
   }
   

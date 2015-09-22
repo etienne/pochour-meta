@@ -37,7 +37,7 @@ input[type=submit], a.button {
   text-align: center;
   
   &:hover {
-    @extend %highlight;
+    @extend %inverted;
     border-color: $text-color;
   }
 }

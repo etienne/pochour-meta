@@ -6,7 +6,7 @@
   
     &:hover {
       padding: 1px 0;
-      @extend %highlight-padded;
+      @extend %highlighted;
       border-bottom: $thin-border-hover;
     }
   }
@@ -48,7 +48,7 @@ div.popup-menu {
     padding: 0.4rem 1rem;
 
     &:hover {
-      @extend %highlight;
+      @extend %inverted;
     }
   }
 

@@ -8,7 +8,7 @@ aside {
     border-bottom: 1px solid;
     
     &:hover {
-      @extend %highlight-padded;
+      @extend %highlighted;
     }
   }
 }
@@ -59,7 +59,7 @@ ul.articles {
         border-bottom: 1px solid;
         
         &:hover {
-          @extend %highlight-padded;
+          @extend %highlighted;
         }
       }
       
@@ -121,12 +121,12 @@ section.filters {
       background-color: rgba($text-color, 0.2);
       
       &:hover {
-        @extend %highlight;
+        @extend %inverted;
       }
     }
 
     &:hover {
-      @extend %highlight;
+      @extend %inverted;
     }
     
     &:first-child {

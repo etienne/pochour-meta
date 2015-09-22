@@ -62,7 +62,7 @@ h2 {
     border-bottom: 2px solid $text-color;
     
     &:hover {
-      @extend %highlight-padded;
+      @extend %highlighted;
     }
   }
 }

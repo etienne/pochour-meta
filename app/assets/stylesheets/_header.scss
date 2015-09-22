@@ -79,7 +79,7 @@ a.back {
   }
   
   &:hover {
-    @extend %highlight-padded;
+    @extend %highlighted;
     border-bottom: $thin-border-hover;
   }
 }

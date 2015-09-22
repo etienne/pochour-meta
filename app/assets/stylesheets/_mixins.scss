@@ -30,16 +30,14 @@ $desktop-width: 1024px;
   -webkit-font-smoothing: antialiased;
 }
 
-%highlight {
+%inverted {
   background-color: $text-color;
   color: $background-color;
   border-color: $text-color;
 }
 
-%highlight-padded {
-  @extend %highlight;
-  padding: 1px 0;
-  box-shadow: 0.15em 0 0 $text-color, -0.15em 0 0 $text-color;
+%highlighted {
+  background-color: $highlight-color;
 }
 
 %no-select {
