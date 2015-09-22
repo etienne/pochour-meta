@@ -14,10 +14,10 @@ $desktop-width: 1024px;
 }
 
 %base-typography {
-  font-family: "Clear Sans";
+  font-family: "Fira Mono";
+  font-weight: bold;
   font-size: 14px;
   line-height: 22px;
-  font-weight: 500;
   color: $text-color;
 }
 
@@ -37,7 +37,7 @@ $desktop-width: 1024px;
 }
 
 %highlighted {
-  background-color: $highlight-color;
+  background-color: $highlight-color-light;
 }
 
 %no-select {

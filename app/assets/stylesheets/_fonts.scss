@@ -1,37 +1,15 @@
 @font-face {
-    font-family: 'Clear Sans';
+    font-family: 'Fira Mono';
     font-style: normal;
-    font-weight: 100;
-    src: local('ClearSans-Thin'), local('Clear Sans Thin'),
-         font-url('ClearSans-Thin.eot'),
-         font-url('ClearSans-Thin.eot?#iefix') format('embedded-opentype'),
-         font-url('ClearSans-Thin.woff') format('woff'),
-         font-url('ClearSans-Thin.ttf') format('truetype'),
-         font-url('ClearSans-Thin.svg') format('svg');
+    font-weight: normal;
+    src: font-url('FiraMono-Regular.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Clear Sans';
+    font-family: 'Fira Mono';
     font-style: normal;
-    font-weight: 500;
-    src: local('ClearSans-Medium'), local('Clear Sans Medium'),
-         font-url('ClearSans-Medium.eot'),
-         font-url('ClearSans-Medium.eot?#iefix') format('embedded-opentype'),
-         font-url('ClearSans-Medium.woff') format('woff'),
-         font-url('ClearSans-Medium.ttf') format('truetype'),
-         font-url('ClearSans-Medium.svg') format('svg');
-}
-
-@font-face {
-    font-family: 'Clear Sans';
-    font-style: italic;
-    font-weight: 500;
-    src: local('ClearSans-MediumItalic'), local('Clear Sans Medium Italic'),
-         font-url('ClearSans-MediumItalic.eot'),
-         font-url('ClearSans-MediumItalic.eot?#iefix') format('embedded-opentype'),
-         font-url('ClearSans-MediumItalic.woff') format('woff'),
-         font-url('ClearSans-MediumItalic.ttf') format('truetype'),
-         font-url('ClearSans-MediumItalic.svg') format('svg');
+    font-weight: bold;
+    src: font-url('FiraMono-Bold.ttf') format('truetype');
 }
 
 @font-face {
