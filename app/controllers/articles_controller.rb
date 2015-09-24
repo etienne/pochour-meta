@@ -44,7 +44,7 @@ class ArticlesController < ApplicationController
     @current_community = @article.community
     @comment = Comment.new
     @epithet_vote = EpithetVote.new
-    @epithet_vote_ids_by_current_user = @article.epithet_votes.where(user_id: current_user.id).pluck(:epithet_id)
+    @epithet_votes_by_current_user = @article.epithet_votes.where(user_id: current_user.id)
   end
   
   def destroy

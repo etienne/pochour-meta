@@ -1,5 +1,5 @@
 section.epithets {
-  ul li {
+  ul li a {
     @extend %no-select;
     float: left;
     border: 1px solid rgba($text-color, 0.15);
@@ -16,7 +16,7 @@ section.epithets {
       padding: 2px 0.6rem;
     }
     
-    &:hover {
+    &:hover, &.selected:hover {
       @extend %inverted;
     }
   }

@@ -10,13 +10,19 @@
 
 <section class="epithets">
   <h1><%= t :epithets %></h1>
-  <ul>
+  <ul id="epithets-list">
     <% @article.epithets_with_counts.each do |epithet_hash| %>
-      <li<%= " class=selected" if @epithet_vote_ids_by_current_user.include? epithet_hash[:epithet].id %> data-id="<%= epithet_hash[:epithet].id %>">
-        <%= epithet_hash[:epithet].name %><span class="count"><%= epithet_hash[:count] %></span>
+      <% has_vote = @epithet_votes_by_current_user.pluck(:epithet_id).include? epithet_hash[:epithet].id %>
+      <li>
+        <% link_text = epithet_hash[:epithet].name << %Q{<span class="count">#{epithet_hash[:count]}</span>} %>
+        <% if has_vote %>
+          <%= link_to sanitize(link_text), @epithet_votes_by_current_user.detect { |e| e.epithet_id == epithet_hash[:epithet].id }, remote: true, method: :delete, class: 'selected' %>
+        <% else %>
+          <%= link_to sanitize(link_text), epithet_votes_path(epithet_vote: { article_id: @article.id, epithet_id: epithet_hash[:epithet].id } ), remote: true, method: :post %>
+        <% end %>
       </li>
     <% end %>
-    <li class="popup-menu-link add" data-popup="epithets-menu">+</li>
+    <li><a class="popup-menu-link add" data-popup="epithets-menu">+</a></li>
   </ul>
   
   <div id="epithets-menu" class="popup-menu">
