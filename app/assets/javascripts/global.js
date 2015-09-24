@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('page:change', function(event) {
   // Fade out notices
   setTimeout(function () {
     $('div.notice').fadeOut(1000);

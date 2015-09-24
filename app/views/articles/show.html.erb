@@ -26,7 +26,7 @@
   </ul>
   
   <div id="epithets-menu" class="popup-menu">
-    <%= form_for(@epithet_vote) do |f| %>
+    <%= form_for(@epithet_vote, remote: true) do |f| %>
       <%= f.hidden_field :article_id, value: @article.id %>
       <%= f.fields_for :epithet do |epithet_form| %>
         <%= epithet_form.text_field :name %>
