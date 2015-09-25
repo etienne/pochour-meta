@@ -18,4 +18,11 @@ $(document).on('page:change', function(event) {
   }).on("ajax:error", function(e, xhr, status, error) {
     console.log("Couldn't create new epithet vote: " + error);
   })
+  
+  // Autofocus
+  $('a[data-popup=epithets-menu]').click(function() {
+    if ($('#epithets-menu').is(":visible")) {
+      $('#epithet_vote_epithet_name').focus().val('');
+    }
+  });
 })
