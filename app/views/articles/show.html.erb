@@ -30,7 +30,7 @@
       <%= f.hidden_field :article_id, value: @article.id %>
       <%= f.fields_for :epithet do |epithet_form| %>
         <%= epithet_form.label t :epithet_help, value: "name" %>
-        <%= epithet_form.text_field :name %>
+        <%= epithet_form.text_field :name, maxlength: 30 %>
       <% end %>
       <%= f.submit t :submit %>
     <% end %>

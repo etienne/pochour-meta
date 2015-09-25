@@ -5,7 +5,7 @@ class EpithetVotesController < ApplicationController
     if epithet_id = params[:epithet_vote][:epithet_id]
       @epithet_vote.epithet = Epithet.find(epithet_id)
     else
-      @epithet_vote.epithet = Epithet.find_or_create_by(name: params[:epithet_vote][:epithet][:name].downcase)
+      @epithet_vote.epithet = Epithet.find_or_create_by!(name: params[:epithet_vote][:epithet][:name].downcase)
     end
     authorize @epithet_vote
     respond_to do |format|
