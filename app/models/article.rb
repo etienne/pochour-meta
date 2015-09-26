@@ -22,5 +22,6 @@ class Article < ActiveRecord::Base
   def epithets_sentence
     epithet_names = epithet_votes.map {|e| e.epithet.name}[0..2].to_sentence.capitalize
     epithet_names << " (#{I18n.t(:among_others)})" if epithet_votes.size > 3
+    epithet_names
   end
 end
