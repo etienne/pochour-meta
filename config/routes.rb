@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :comments
   resources :epithet_votes
+  get 'communities/:community_id/epithets/:id' => 'epithets#show', as: :epithet
   
   # get 'communities/new'
   # post 'communities/create'

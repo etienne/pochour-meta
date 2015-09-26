@@ -30,6 +30,8 @@ class CommunitiesController < ApplicationController
     @community = Community.find(params[:id])
     @current_community = @community
     authorize @community
+    @articles = @community.articles
+    @epithets = Epithet.joins(epithet_votes: { article: :community }).where('articles.community_id' => @community.id).group(:id).order('RANDOM()').limit(12)
   end
   
   private

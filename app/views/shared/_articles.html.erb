@@ -1,6 +1,8 @@
 <ul class="articles">
-  <% if entity.articles.size > 0 %>
-    <% entity.articles.each do |article| %>
+  <% if @articles.blank? %>
+    (<%= t :nothing %>.)
+  <% else %>
+    <% @articles.each do |article| %>
     <li>
       <aside>
         <% if entity.is_a? User %>
@@ -22,7 +24,5 @@
       </article>
     </li>
     <% end %>
-  <% else %>
-  (<%= t :nothing %>.)
   <% end %>
 </ul>

@@ -1,0 +1,4 @@
+<%= link_to @current_community.name, @current_community, class: :back %>
+<h1><%= @epithet.name.capitalize %></h1>
+
+<%= render partial: "shared/articles", locals: { articles: @articles, entity: @epithet } %>
