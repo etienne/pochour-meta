@@ -18,14 +18,16 @@ ActiveRecord::Schema.define(version: 20150919010754) do
     t.text     "body"
     t.integer  "user_id"
     t.integer  "community_id"
+    t.integer  "original_article_id"
     t.datetime "last_comment_at"
     t.integer  "comment_count"
     t.string   "slug"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   add_index "articles", ["community_id"], name: "index_articles_on_community_id"
+  add_index "articles", ["original_article_id"], name: "index_articles_on_original_article_id"
   add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true
   add_index "articles", ["user_id"], name: "index_articles_on_user_id"
 

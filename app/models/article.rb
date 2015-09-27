@@ -4,8 +4,10 @@ class Article < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :community
+  belongs_to :original_article, class_name:"Article"
   has_many :comments, -> { order "created_at" }
   has_many :epithet_votes, -> { group :epithet_id }
+  has_many :responses, class_name: "Article", foreign_key: "original_article_id"
   scope :recently_commented, -> { where.not(last_comment_at: nil).order("last_comment_at DESC").limit(12) }
   
   def update_comment_metadata

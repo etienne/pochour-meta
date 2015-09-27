@@ -21,6 +21,14 @@ $desktop-width: 1024px;
   color: $text-color;
 }
 
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 %serif {
   font-family: "Noticia Text OSF";
   font-size: 18px;
@@ -28,6 +36,11 @@ $desktop-width: 1024px;
   font-weight: normal;
   color: $text-color;
   -webkit-font-smoothing: antialiased;
+}
+
+%small-text {
+  font-size: 14px;
+  line-height: 24px;
 }
 
 %inverted {

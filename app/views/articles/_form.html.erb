@@ -1,7 +1,12 @@
-<%= link_to @current_community.name, @current_community, class: :back %>
+<% if @original_article.blank? %>
+  <%= link_to @current_community.name, @current_community, class: :back %>
+<% else %>
+  <%= link_to @original_article.title, @original_article, class: :back %>
+<% end %>
 
 <%= form_for(@article) do |f| %>
   <%= f.hidden_field :community_id, value: @current_community.id %>
+  <%= f.hidden_field :original_article_id, value: @original_article.id %>
 
   <h1>
     <%= f.text_field :title, autofocus: true, placeholder: t(:title) %>
@@ -13,6 +18,12 @@
   </aside>
   
   <article>
+    <% unless @original_article.blank? %>
+    <p class="note">
+      <%= t :response_to %>
+      <%= link_to @original_article.title, @original_article %>.
+    </p>
+    <% end %>
     <div id="toolbar">
       <a class="bold" data-wysihtml5-command="bold">B</a>
       <a class="italic" data-wysihtml5-command="italic">I</a>

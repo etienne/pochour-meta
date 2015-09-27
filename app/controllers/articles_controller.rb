@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
   def new
     @article = Article.new
+    if params[:original_article_id]
+      @original_article = Article.find(params[:original_article_id])
+      authorize @original_article, :show?
+    end
     @current_community = params[:community_id] ? Community.find(params[:community_id]) : current_user.communities.first
     authorize @current_community, :edit?
   end
@@ -58,6 +62,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :body, :community_id)
+    params.require(:article).permit(:title, :body, :community_id, :original_article_id)
   end
 end

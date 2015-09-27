@@ -33,6 +33,8 @@ fr:
   public: "Publique"
   publish: "Publier"
   recent_comments: "Dernières commentations"
+  respond_to_this_article: "Répondre à cet article"
+  response_to: "Cet article est une réponse à"
   settings: "Réglages"
   sign_out: "Déconnectation"
   sign_up: "Créer un compte"

@@ -13,6 +13,20 @@ aside {
   }
 }
 
+p.note {
+  @extend %small-text;
+  font-style: italic;
+  
+  a {
+    border-bottom: $thin-border;
+    
+    &:hover {
+      @extend %highlighted;
+      border-bottom: $thin-border-hover;
+    }
+  }
+}
+
 article {
   @extend %serif;
   margin-bottom: 10rem;
@@ -23,6 +37,14 @@ article {
   
   .actions {
     @extend %base-typography;
+  }
+  
+  textarea, .wysihtml5-editor {
+    clear: both;
+    font: inherit;
+    line-height: inherit;
+    min-height: 25rem;
+    outline: none;
   }
 }
 
@@ -107,10 +129,10 @@ section.filters {
 }
 
 #toolbar {
+  float: left;
   font-size: 14px;
-  position: absolute;
-  margin-top: -3.2rem;
   border: 2px solid rgba($text-color, 0.2);
+  margin-bottom: 1rem;
   
   a {
     float: left;
