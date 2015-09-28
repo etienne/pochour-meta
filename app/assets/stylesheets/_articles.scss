@@ -13,9 +13,11 @@ aside {
   }
 }
 
-p.note {
+.note {
   @extend %small-text;
   font-style: italic;
+  margin-bottom: 1rem;
+  color: rgba($text-color, 0.6);
   
   a {
     border-bottom: $thin-border;

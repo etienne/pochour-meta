@@ -1,21 +1,44 @@
 <%= link_to @article.community.name, @article.community, class: :back %>
-<h1><%= best_in_place_if policy(@article).edit?, @article, :title, as: :textarea %>&nbsp;<%= link_to(t(:edit), edit_article_path(@article), id: 'edit-title', class: 'mini') if policy(@article).edit? %></h1>
+<h1><%= best_in_place_if policy(@article).edit?, @article, :title, as: :textarea %></h1>
+
 <aside>
   <div><%= link_to @article.user.name, @article.user %></div>
   <div class="secondary"><%= l @article.created_at, format: :long %></div>
 </aside>
+
 <article>
   <% unless @article.original_article.blank? %>
   <p class="note">
     <%= t :response_to %>
-    <%= link_to @article.original_article.title, @article.original_article %>.
+    <%= link_to @article.original_article.title, @article.original_article %>
+    <%= "#{t :by} #{@article.original_article.user.name}" %>.
   </p>
   <% end %>
   
   <%= sanitize @article.body %>
-  <% unless @article.user == current_user %>
-    <%= link_to t(:respond_to_this_article), new_article_path(original_article_id: @article.id), class: 'button' %>
+  
+  <% unless @article.responses.blank? %>
+  <div class="note">
+    <% if @article.responses.size == 1 %>
+      <%= t :response_to_this_article %>&nbsp;:
+      <%= link_to @article.responses.first.title, @article.responses.first %>
+      <%= "#{t :by} #{@article.responses.first.user.name}" %>
+    <% else %>
+      <%= t :responses_to_this_article %>&nbsp;:
+      <ul>
+        <% @article.responses.each do |response| %>
+          <li>
+            <%= link_to response.title, response %>
+            <%= "#{t :by} #{response.user.name}" %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
   <% end %>
+  
+  <%= link_to(t(:edit_this_article), edit_article_path(@article), id: 'edit-title', class: 'button') if policy(@article).edit? %>
+  <%= link_to(t(:respond_to_this_article), new_article_path(original_article_id: @article.id), class: 'button') unless @article.user == current_user %>
 </article>
 
 <section class="epithets">
