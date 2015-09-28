@@ -34,6 +34,7 @@
     
     <div class="actions">
       <% if @article.new_record? %>  
+        <%= link_to t(:cancel), :back, class: 'button-link' %>
         <%= f.submit t :publish %>
       <% else %>
         <%= link_to t(:delete_article), @article, data: { confirm: t(:confirm_delete_article) }, class: 'button-link', method: :delete %>
