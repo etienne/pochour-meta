@@ -2,7 +2,9 @@
 
 <%= form_for(@article) do |f| %>
   <%= f.hidden_field :community_id, value: @current_community.id %>
-  <%= f.hidden_field :original_article_id, value: @original_article.id %>
+  <% unless @original_article.blank? %>
+    <%= f.hidden_field :original_article_id, value: @original_article.id %>
+  <% end %>
 
   <h1>
     <%= f.text_field :title, autofocus: true, placeholder: t(:title) %>
