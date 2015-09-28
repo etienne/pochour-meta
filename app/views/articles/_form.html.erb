@@ -1,8 +1,4 @@
-<% if @original_article.blank? %>
-  <%= link_to @current_community.name, @current_community, class: :back %>
-<% else %>
-  <%= link_to @original_article.title, @original_article, class: :back %>
-<% end %>
+<%= link_to @current_community.name, @current_community, class: :back %>
 
 <%= form_for(@article) do |f| %>
   <%= f.hidden_field :community_id, value: @current_community.id %>
