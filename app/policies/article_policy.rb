@@ -5,11 +5,15 @@ class ArticlePolicy
     @user = user
     @record = record
   end
-
+  
   def show?
     record.community.users.include? user or record.community.public
   end
   
+  def respond?
+    show? and record.user != user
+  end
+
   def edit?
     record.user == user
   end
