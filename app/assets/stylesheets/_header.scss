@@ -67,7 +67,7 @@ header {
 a.back {
   @extend .secondary;
   position: absolute;
-  border-bottom: $thin-border;
+  border-bottom: $thin-border-highlight;
   
   &:before {
     position: absolute;
@@ -80,6 +80,6 @@ a.back {
   
   &:hover {
     @extend %highlighted;
-    border-bottom: $thin-border-hover;
+    border-bottom: $thin-border-highlight-hover;
   }
 }

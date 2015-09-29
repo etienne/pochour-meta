@@ -4,7 +4,7 @@ form {
 
 input, a.button, textarea, select, .wysihtml5-editor {
   @extend %base-typography;
-  border: 2px solid rgba($text-color, 0.2);
+  border: 2px solid rgba($text-color, 0.15);
   background-color: white;
   padding: 0.5rem;
   margin: 0.8rem 0;
@@ -26,7 +26,7 @@ a.button {
 
 input:focus, textarea:focus, div.wysihtml5-editor:focus {
   outline: none;
-  border-color: rgba($text-color, 0.6);
+  border-color: $highlight-color;
 }
 
 input[type=submit], a.button {

@@ -9,6 +9,10 @@ html {
   background-size: 100% 100%;
 }
 
+html.turbolinks-progress-bar::before {
+  background-color: $highlight-color !important;
+}
+
 body {
   margin: 0;
   padding: 4rem 1rem 8rem;

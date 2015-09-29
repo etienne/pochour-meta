@@ -1,9 +1,13 @@
-$text-color: black;
-$highlight-color: rgba(#1EF5BA, 0.2);
+$text-color: #3f0c07;
+$highlight-color: #05c6b4;
+$highlight-color-light: rgba(#1EF5BA, 0.2);
 $background-color: white;
 $yellow: #FFE400;
+
 $thin-border: 1px solid rgba($text-color, 0.3);
 $thin-border-hover: 1px solid $text-color;
+$thin-border-highlight: 1px solid rgba($highlight-color, 0.3);
+$thin-border-highlight-hover: 1px solid $highlight-color;
 
 @import "susy";
 @import "fonts";

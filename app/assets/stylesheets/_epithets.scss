@@ -8,7 +8,7 @@ section.epithets {
     cursor: pointer;
     
     &.selected {
-      background-color: $highlight-color;
+      background-color: $highlight-color-light;
     }
     
     &.add {
