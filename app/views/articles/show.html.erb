@@ -91,7 +91,7 @@
   <%= form_for(@comment) do |f| %>
     <%= f.hidden_field :article_id, value: @article.id %>
     <%= f.text_area :body %>
-    <%= f.submit t :publish %>
+    <%= f.submit t :comment_verb %>
   <% end %>
   
 </section>
