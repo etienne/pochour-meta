@@ -3,7 +3,7 @@ div.notice, div.alert {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem;
+  padding: 14px;
   text-align: center;
 }
 
@@ -17,21 +17,21 @@ div.notice, div.alert {
 
 header {
   text-align: right;
-  margin-bottom: 4rem;
+  margin-bottom: 56px;
   position: relative;
   
   span.popup-menu-link {
     @extend %no-select;
     
-    margin-right: 1rem;
+    margin-right: 14px;
     cursor: pointer;
     
     &:after {
       position: absolute;
       content: " ";
       display: inline-block;
-      width: 1rem;
-      padding-left: 0.1rem;
+      width: 14px;
+      padding-left: 1px;
       background: image-url("chevron-down.svg") no-repeat 100% 60%;
     }
     
@@ -41,12 +41,12 @@ header {
   }
   
   span.popup-menu-link.account {
-    margin-left: 2.2rem;
+    margin-left: 31px;
     
     &:before {
       position: absolute;
       top: 50%;
-      margin: -20px 0 0 -1.2rem;
+      margin: -20px 0 0 -17px;
       content: "";
       border-left: 1px solid rgba($text-color, 0.5);
       height: 40px;
@@ -60,7 +60,7 @@ header {
   a.button {
     display: inline-block;
     width: auto;
-    margin-left: 1rem;
+    margin-left: 14px;
   }
 }
 
@@ -71,10 +71,10 @@ a.back {
   
   &:before {
     position: absolute;
-    left: -1.5rem;
+    left: -21px;
     content: ' ';
     display: inline-block;
-    width: 1rem;
+    width: 14px;
     background: image-url("arrow-left.svg") no-repeat 100% 60%;
   }
   

@@ -4,7 +4,7 @@
 
 html {
   @extend %base-typography;
-  padding-bottom: 10rem;
+  padding-bottom: 140px;
 }
 
 html.turbolinks-progress-bar::before {
@@ -13,7 +13,7 @@ html.turbolinks-progress-bar::before {
 
 body {
   margin: 0;
-  padding: 4rem 1rem 8rem;
+  padding: 56px 14px 112px;
   background-color: $background-color;
 }
 
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 50px;
   line-height: 64px;
-  margin: 2rem 0 8rem;
+  margin: 28px 0 112px;
 
   @include tablet {
     @include span(8 of 12);
@@ -57,7 +57,7 @@ h1 {
 h2 {
   font-size: 22px;
   line-height: 35px;
-  margin: 1.5rem 0 0;
+  margin: 21px 0 0;
   
   a {
     border-bottom: 2px solid $text-color;
@@ -69,9 +69,9 @@ h2 {
 }
 
 h3 {
-  margin: 0.1rem 0 0.6rem;
+  margin: 1px 0 8px;
 }
 
 p {
-  margin: 0 0 1rem 0;
+  margin: 0 0 14px 0;
 }

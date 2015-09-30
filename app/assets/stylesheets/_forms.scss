@@ -1,13 +1,13 @@
 form {
-  margin-bottom: 2rem;
+  margin-bottom: 28px;
 }
 
 input, a.button, textarea, select, .wysihtml5-editor {
   @extend %base-typography;
   border: 2px solid rgba($text-color, 0.15);
   background-color: white;
-  padding: 0.5rem;
-  margin: 0.8rem 0;
+  padding: 7px;
+  margin: 11px 0;
 }
 
 input, textarea {
@@ -20,7 +20,7 @@ a.button {
   &.mini {
     display: inline-block;
     font-size: 11px;
-    padding: 0.15rem 0.6rem;
+    padding: 2px 8px;
   }
 }
 
@@ -32,8 +32,8 @@ input:focus, textarea:focus, div.wysihtml5-editor:focus {
 input[type=submit], a.button {
   cursor: pointer;
   border-color: $text-color;
-  padding-left: 0.9rem;
-  padding-right: 0.9rem;
+  padding-left: 13px;
+  padding-right: 13px;
   text-align: center;
   
   &:hover {
@@ -44,7 +44,7 @@ input[type=submit], a.button {
 
 a.button-link {
   display: inline-block;
-  margin: 1.3rem 0;
+  margin: 18px 0;
   border-bottom: 1px solid rgba($text-color, 0.5);
   
   &:hover {
@@ -54,11 +54,11 @@ a.button-link {
 
 label {
   display: block;
-  margin: 1rem 0 0;
+  margin: 14px 0 0;
 }
 
 form .actions {
-  margin-top: 0.5rem;
+  margin-top: 7px;
 }
 
 div.simple_form {
@@ -75,8 +75,8 @@ h1 input, h1 textarea {
 }
 
 h1 textarea {
-  padding: 0.5rem;
-  margin: -0.65rem -0.6rem;
+  padding: 7px;
+  margin: -9px -8px;
 }
 
 .form_in_place {
