@@ -25,4 +25,12 @@ $(document).on('page:change', function(event) {
       $('#epithet_vote_epithet_name').focus().val('');
     }
   });
+  
+  // Handle AJAX comment form
+  $('#comment_body').val('');
+  $("#new_comment").on("ajax:success", function(e, data, status, xhr) {
+    Turbolinks.visit(window.location.href, { change: ['comments-list'], scroll: false })
+  }).on("ajax:error", function(e, xhr, status, error) {
+    console.log("Couldn't create new comment: " + error);
+  })
 })

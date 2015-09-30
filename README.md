@@ -2,7 +2,6 @@ TODO
 ====
 
 - Article series
-- Ajax comment posting
 - Invitations
 - Do something with public/private communities
 - Add lists to WYSIWYG editor

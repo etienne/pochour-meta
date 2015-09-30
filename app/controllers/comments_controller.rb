@@ -3,8 +3,11 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     authorize @comment.article, :show?
     @comment.user = current_user
-    @comment.save
-    redirect_to article_path(@comment.article, anchor: "comment-id-#{@comment.id}")
+    respond_to do |format|
+      @comment.save!
+      format.html { redirect_to article_path(@comment.article, anchor: "comment-id-#{@comment.id}") }
+      format.json { head :created }
+    end
   end
   
   private
