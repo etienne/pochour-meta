@@ -77,8 +77,8 @@
     <% @article.comments.each do |c| %>
     <li id="comment-id-<%= c.id %>">
       <span class="metadata">
-        <%= link_to c.user.name, c.user %> — 
-        <span class="secondary"><%= l c.created_at, format: :long %></span>
+        <%= link_to c.user.name, c.user %> 
+        <span class="secondary">— <%= l c.created_at, format: :long %></span>
       </span>
       <div class="body">
         <%= sanitize c.body %>
