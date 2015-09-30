@@ -9,4 +9,5 @@ TODO
 - Add subtitles?
 - Consider italics in article titles?
 - Find a better word than "communities"? "group"?
-- Implement moment.js
+- Implement moment.js for relative times
+- Show time gaps between comments (and articles?)

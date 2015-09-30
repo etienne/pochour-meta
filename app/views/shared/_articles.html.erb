@@ -7,7 +7,7 @@
       <aside>
         <% if entity.is_a? User %>
           <%= article.community.name %>
-        <% elsif entity.is_a? Community %>
+        <% else %>
           <%= article.user.name %>
         <% end %>
         <span class="secondary">— <%= l article.created_at, format: :long %></span>
