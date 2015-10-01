@@ -35,7 +35,7 @@ end
     body: "<p>#{Faker::Lorem.paragraphs(rand(3...6)).join('</p><p>')}</p>",
     user: user,
     community: user.communities.first,
-    created_at: Faker::Date.backward(200)
+    created_at: Faker::Time.backward(200)
   )
 end
 
@@ -47,7 +47,7 @@ end
     body: "<p>#{Faker::Lorem.paragraph}</p>",
     user: user,
     article: article,
-    created_at: Faker::Date.between(article.created_at, Date.today)
+    created_at: Faker::Time.between(article.created_at, Date.today)
   )
 end
 

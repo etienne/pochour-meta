@@ -10,7 +10,7 @@
         <% else %>
           <%= article.user.name %>
         <% end %>
-        <span class="secondary">— <%= l article.created_at, format: :long %></span>
+        <span class="secondary">— <%= time_tag(article.created_at, l(article.created_at, format: :long)) %></span>
         <h2><%= link_to article.title, article %></h2>
       </aside>
       <article>

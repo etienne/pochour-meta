@@ -3,7 +3,7 @@
 
 <aside>
   <div><%= link_to @article.user.name, @article.user %></div>
-  <div class="secondary"><%= l @article.created_at, format: :long %></div>
+  <div class="secondary"><%= time_tag(@article.created_at, l(@article.created_at, format: :long)) %></div>
 </aside>
 
 <article>
@@ -78,7 +78,7 @@
     <li id="comment-id-<%= c.id %>">
       <span class="metadata">
         <%= link_to c.user.name, c.user %> 
-        <span class="secondary">— <%= l c.created_at, format: :long %></span>
+        <span class="secondary">— <%= time_tag(c.created_at, l(c.created_at, format: :long_with_time)) %></span>
       </span>
       <div class="body">
         <%= sanitize c.body %>

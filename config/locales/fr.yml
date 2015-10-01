@@ -51,3 +51,4 @@ fr:
   time:
     formats:
       long: "%d %B %Y"
+      long_with_time: "%d %B %Y à %k:%M"

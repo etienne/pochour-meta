@@ -4,6 +4,10 @@ $(document).on('page:change', function(event) {
     $('div.notice').fadeOut(1000);
   }, 1500);
   
+  // Use timeago
+  $.timeago.settings.cutoff = 7*24*60*60*1000; // 1 week
+  $("time").timeago();
+  
   // Activate in-place editor
   $(".best_in_place").best_in_place();
   

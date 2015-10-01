@@ -14,6 +14,8 @@
 //= require jquery.turbolinks
 //= require best_in_place
 //= require jquery_ujs
+//= require jquery-timeago
+//= require jquery-timeago/locales/jquery.timeago.fr-short
 //= require position-calculator
 //= require wysihtml
 //= require_tree .
