@@ -7,7 +7,7 @@ bin/rake db:migrate
 bin/rake bower:install
 ```
 
-If you want fake date in your database: `bin/rake db:seed`
+If you want fake data in your database: `bin/rake db:seed`
 
 Todo
 ====
