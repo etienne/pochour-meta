@@ -1,4 +1,15 @@
-TODO
+Setup
+=====
+
+```
+bundle
+bin/rake db:migrate
+bin/rake bower:install
+```
+
+If you want fake date in your database: `bin/rake db:seed`
+
+Todo
 ====
 
 - Article series
@@ -8,5 +19,8 @@ TODO
 - Add subtitles?
 - Consider italics in article titles?
 - Find a better word than "communities"? "group"?
-- Implement moment.js for relative times
 - Show time gaps between comments (and articles?)
+- Add language switching and English translation
+- Clean up community form
+- Clean up account form
+- Allow users and communities to have a default timezone setting
