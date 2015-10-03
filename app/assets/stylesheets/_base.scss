@@ -9,6 +9,7 @@ html {
 
 html.turbolinks-progress-bar::before {
   background-color: $highlight-color !important;
+  height: 5px !important;
 }
 
 body {

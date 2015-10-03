@@ -26,7 +26,6 @@ Todo
 - Allow users and communities to have a default timezone setting
 - Shim mobile version
 - RSS feeds for every articles list
-- Add modification dates to articles
 - Bug: AJAX comment posting doesn't work when there are no comments yet
 - Allow comment editing for a certain time? 15m?
 - Sort epithets by number of votes

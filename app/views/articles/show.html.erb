@@ -3,7 +3,13 @@
 
 <aside>
   <div><%= link_to @article.user.name, @article.user %></div>
-  <div class="secondary"><%= time_tag(@article.created_at, l(@article.created_at, format: :long)) %></div>
+  <div class="secondary">
+    <%= time_tag(@article.created_at, l(@article.created_at, format: :long)) %>
+    <% if @article.updated_at.to_date != @article.created_at.to_date %>
+      <br><%= t :modified %>
+      <%= time_tag(@article.updated_at, "#{t :on} " << l(@article.updated_at, format: :long)) %>
+    <% end %>
+  </div>
 </aside>
 
 <article>
