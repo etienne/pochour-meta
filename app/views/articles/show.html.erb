@@ -78,7 +78,6 @@
 
 <section class="comments">
   <h1 id="comments"><%= t :comments %></h1>
-  <% unless @article.comments.blank? %>
   <ul id="comments-list">
     <% @article.comments.each do |c| %>
     <li id="comment-id-<%= c.id %>">
@@ -92,7 +91,6 @@
     </li>
     <% end %>
   </ul>
-  <% end %>
   
   <%= form_for(@comment, remote: true) do |f| %>
     <%= f.hidden_field :article_id, value: @article.id %>
