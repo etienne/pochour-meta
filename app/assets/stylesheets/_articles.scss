@@ -58,6 +58,8 @@ ul.articles {
   }
   
   aside {
+    margin-bottom: 0;
+    
     @include tablet {
       @include span(7 of 8);
       @include post(1 of 8);
