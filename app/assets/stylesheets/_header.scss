@@ -66,9 +66,15 @@ header {
 
 a.back {
   @extend .secondary;
-  position: absolute;
+  position: relative;
+  margin-left: 21px;
   border-bottom: $thin-border-highlight;
   
+  @include tablet {
+    position: absolute;
+    margin-left: 0;
+  }
+    
   &:before {
     position: absolute;
     left: -21px;

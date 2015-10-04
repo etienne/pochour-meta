@@ -1,4 +1,6 @@
 aside {
+  margin-bottom: 20px;
+  
   @include tablet {
     @include span(4 of 12 break first);
     margin-top: 5px;
