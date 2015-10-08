@@ -22,6 +22,7 @@ fr:
   email: "Courriel"
   epithet_help: "Un mot pour décrire cet article :"
   epithets: "Épithètes"
+  followup_to: "Cet article fait suite à"
   forgot_password: "Mot de passe oublié"
   home: "Accueil"
   login: "Connectation"
@@ -50,6 +51,8 @@ fr:
   title: "Titre"
   update: "Mettre à jour"
   write_something: "Écrire quelque chose"
+  write_followup: "Écrire une suite"
+    
   time:
     formats:
       long: "%d %B %Y"

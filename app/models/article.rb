@@ -5,6 +5,7 @@ class Article < ActiveRecord::Base
   belongs_to :user
   belongs_to :community
   belongs_to :original_article, class_name:"Article"
+  belongs_to :series
   has_many :comments, -> { order "created_at" }
   has_many :epithet_votes, -> { group :epithet_id }
   has_many :responses, class_name: "Article", foreign_key: "original_article_id"
@@ -17,7 +18,7 @@ class Article < ActiveRecord::Base
   def epithets_with_counts
     # Probably needs optimization.
     epithet_votes.count.map do |epithet_array|
-      { epithet: Epithet.find(epithet_array.first), count: epithet_array.second}
+      { epithet: Epithet.find(epithet_array.first), count: epithet_array.second }
     end
   end
   

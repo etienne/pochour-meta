@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150919010754) do
+ActiveRecord::Schema.define(version: 20151008023716) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
     t.integer  "user_id"
     t.integer  "community_id"
+    t.integer  "series_id"
     t.integer  "original_article_id"
     t.datetime "last_comment_at"
     t.integer  "comment_count"
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150919010754) do
 
   add_index "articles", ["community_id"], name: "index_articles_on_community_id"
   add_index "articles", ["original_article_id"], name: "index_articles_on_original_article_id"
+  add_index "articles", ["series_id"], name: "index_articles_on_series_id"
   add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true
   add_index "articles", ["user_id"], name: "index_articles_on_user_id"
 
@@ -91,6 +93,14 @@ ActiveRecord::Schema.define(version: 20150919010754) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "series", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "series", ["user_id"], name: "index_series_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

@@ -2,10 +2,9 @@
 
 <%= form_for(@article) do |f| %>
   <%= f.hidden_field :community_id, value: @current_community.id %>
-  <% unless @original_article.blank? %>
-    <%= f.hidden_field :original_article_id, value: @original_article.id %>
-  <% end %>
-
+  <%= f.hidden_field :original_article_id, value: @original_article.id unless @original_article.blank? %>
+  <%= f.hidden_field :followup_to_article_id, value: @followup_to_article.id unless @followup_to_article.blank? %>
+  
   <h1>
     <%= f.text_field :title, autofocus: true, placeholder: t(:title) %>
   </h1>
@@ -22,6 +21,14 @@
       <%= link_to @original_article.title, @original_article %>.
     </p>
     <% end %>
+
+    <% unless @followup_to_article.blank? %>
+    <p class="note">
+      <%= t :followup_to %>
+      <%= link_to @followup_to_article.title, @followup_to_article %>.
+    </p>
+    <% end %>
+
     <div id="toolbar">
       <a class="bold" data-wysihtml5-command="bold">B</a>
       <a class="italic" data-wysihtml5-command="italic">I</a>

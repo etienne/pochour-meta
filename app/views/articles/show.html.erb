@@ -43,7 +43,10 @@
   </div>
   <% end %>
   
-  <%= link_to(t(:edit_this_article), edit_article_path(@article), id: 'edit-title', class: 'button') if policy(@article).edit? %>
+  <% if policy(@article).edit? %>
+    <%= link_to(t(:edit_this_article), edit_article_path(@article), class: 'button') %>
+    <%= link_to(t(:write_followup), new_article_path(series_with_article_id: @article.id), class: 'button') %>
+  <% end %>
   <%= link_to(t(:respond_to_this_article), new_article_path(original_article_id: @article.id), class: 'button') unless @article.user == current_user %>
 </article>
 

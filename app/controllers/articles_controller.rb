@@ -5,6 +5,10 @@ class ArticlesController < ApplicationController
       @original_article = Article.find(params[:original_article_id])
       authorize @original_article, :respond?
     end
+    if params[:series_with_article_id]
+      @followup_to_article = Article.find(params[:series_with_article_id])
+      authorize @followup_to_article, :edit?
+    end
     @current_community = params[:community_id] ? Community.find(params[:community_id]) : current_user.communities.first
     authorize @current_community, :edit?
   end
@@ -12,10 +16,21 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     authorize @article.community, :edit?
-    if params[:original_article_id]
+    @article.user = current_user
+    
+    # Handle response
+    if params[:article][:original_article_id]
       authorize Article.find(params[:original_article_id]), :respond?
     end
-    @article.user = current_user
+    
+    # Handle followup
+    if params[:article][:followup_to_article_id]
+      followup_to_article = Article.find(params[:article][:followup_to_article_id])
+      authorize followup_to_article, :edit?
+      @article.series = followup_to_article.series || followup_to_article.create_series(user: current_user)
+      followup_to_article.save!
+    end
+    
     if @article.save
       redirect_to @article
     else

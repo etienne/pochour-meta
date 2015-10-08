@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :articles
   has_many :comments, -> { order("created_at DESC").limit(12) }
   has_many :epithet_votes
+  has_many :series
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
