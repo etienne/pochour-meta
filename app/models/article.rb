@@ -27,4 +27,26 @@ class Article < ActiveRecord::Base
     epithet_names << " (#{I18n.t(:among_others)})" if epithet_votes.size > 3
     epithet_names
   end
+  
+  def previous_in_series
+    unless series.blank?
+      previous = nil
+      series.articles.each do |article|
+        return previous if self == article && previous.class.name == "Article"
+        previous = article
+      end
+    end
+    false
+  end
+  
+  def next_in_series
+    unless series.blank?
+      return_next_article = false
+      series.articles.each do |article|
+        return article if return_next_article
+        return_next_article = true if self == article
+      end
+    end
+    false
+  end
 end

@@ -21,7 +21,21 @@
   </p>
   <% end %>
   
+  <% unless @article.previous_in_series.blank? %>
+  <p class="note">
+    <%= t :followup_to %>
+    <%= link_to @article.previous_in_series.title, @article.previous_in_series %>.
+  </p>
+  <% end %>
+  
   <%= sanitize @article.body %>
+  
+  <% unless @article.next_in_series.blank? %>
+  <p class="note">
+    <%= t :followup %>
+    <%= link_to @article.next_in_series.title, @article.next_in_series %>.
+  </p>
+  <% end %>
   
   <% unless @article.responses.blank? %>
   <div class="note">

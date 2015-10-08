@@ -22,6 +22,7 @@ fr:
   email: "Courriel"
   epithet_help: "Un mot pour décrire cet article :"
   epithets: "Épithètes"
+  followup: "Suite :"
   followup_to: "Cet article fait suite à"
   forgot_password: "Mot de passe oublié"
   home: "Accueil"
