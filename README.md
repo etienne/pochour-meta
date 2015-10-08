@@ -28,3 +28,4 @@ Todo
 - RSS feeds for every articles list
 - Allow comment editing for a certain time? 15m?
 - Sort epithets by number of votes
+- Add page with all epithets
