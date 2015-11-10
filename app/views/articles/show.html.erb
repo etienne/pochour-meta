@@ -62,15 +62,14 @@
   </section>
   
   <ul id="epithets-list">
-    <% @article.epithets_with_counts.each do |epithet_hash| %>
-      <% has_vote = @epithet_votes_by_current_user.pluck(:epithet_id).include? epithet_hash[:epithet].id %>
-      <li>
-        <% link_text = epithet_hash[:epithet].name %>
-        <% link_text << %Q{<span class="count">#{epithet_hash[:count]}</span>} if epithet_hash[:count] > 1 %>
-        <% if has_vote %>
-          <%= link_to sanitize(link_text), @epithet_votes_by_current_user.detect { |e| e.epithet_id == epithet_hash[:epithet].id }, remote: true, method: :delete, class: 'selected' %>
+    <% @article.epithets_with_users.each do |epithet, users| %>
+      <li data-users="<%= t(:used_by) << " " << users.map { |u| u.name }.to_sentence %>">
+        <% link_text = epithet.name %>
+        <% link_text << %Q{<span class="count">#{users.count}</span>} if users.count > 1 %>
+        <% if users.include? @current_user %>
+          <%= link_to sanitize(link_text), @epithet_votes_by_current_user.detect { |e| e.epithet_id == epithet.id }, remote: true, method: :delete, class: 'selected' %>
         <% else %>
-          <%= link_to sanitize(link_text), epithet_votes_path(epithet_vote: { article_id: @article.id, epithet_id: epithet_hash[:epithet].id } ), remote: true, method: :post %>
+          <%= link_to sanitize(link_text), epithet_votes_path(epithet_vote: { article_id: @article.id, epithet_id: epithet.id } ), remote: true, method: :post %>
         <% end %>
       </li>
     <% end %>

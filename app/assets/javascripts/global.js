@@ -37,25 +37,7 @@ $(document).on('page:change', function(event) {
     $('.popup-menu').fadeOut(100);
     var popup_menu = $('#' + $(this).attr('data-popup'));
     popup_menu.fadeToggle(100);
-    
-    if (popup_menu.is(':visible')) {
-      $(popup_menu).css({
-        transform: "translate(0, 0)"
-      })
-      
-      var calculator = new $.PositionCalculator({
-        item: popup_menu,
-        itemAt: "top center",
-        target: this,
-        targetAt: "bottom center",
-        flip: "both"
-      });
-      var position = calculator.calculate();
-
-      popup_menu.css({
-        transform: "translate(" + position.moveBy.x + "px, " + (position.moveBy.y + 14) + "px)"
-      })
-    }
+    positionMenu(popup_menu, this);
   });
   
   $(document).mousedown(function(event) {
@@ -66,3 +48,25 @@ $(document).on('page:change', function(event) {
     }
   });
 })
+
+// TODO: Should probably turn this into a jQuery extension
+function positionMenu(item, anchor) {
+  if (item.is(':visible')) {
+    $(item).css({
+      transform: "translate(0, 0)"
+    })
+    
+    var calculator = new $.PositionCalculator({
+      item: item,
+      itemAt: "top center",
+      target: anchor,
+      targetAt: "bottom center",
+      flip: "both"
+    });
+    var position = calculator.calculate();
+
+    item.css({
+      transform: "translate(" + position.moveBy.x + "px, " + (position.moveBy.y + 14) + "px)"
+    })
+  }
+}

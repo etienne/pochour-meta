@@ -8,6 +8,14 @@ $(document).on('page:change', function(event) {
   }
   
   // Handle epithets
+  $("#epithets-list").after($('<div class="popup-menu" id="epithet-popup">a</div>'));
+  $("#epithets-list li[data-users]").hover(function() {
+    $("#epithet-popup").html($(this).data('users')).fadeIn(100);
+    positionMenu($("#epithet-popup"), $(this).find('a'));
+  }, function() {
+    $("#epithet-popup").fadeOut(100);
+  });
+  
   $("#epithets-list a[data-remote]").on("ajax:success", function(e, data, status, xhr) {
     Turbolinks.visit(window.location.href, { change: ['epithets-list'], scroll: false })
   });

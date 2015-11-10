@@ -7,7 +7,7 @@ class Article < ActiveRecord::Base
   belongs_to :original_article, class_name:"Article"
   belongs_to :series
   has_many :comments, -> { order "created_at" }
-  has_many :epithet_votes, -> { group :epithet_id }
+  has_many :epithet_votes
   has_many :responses, class_name: "Article", foreign_key: "original_article_id"
   scope :recently_commented, -> { where.not(last_comment_at: nil).order("last_comment_at DESC").limit(12) }
   
@@ -15,11 +15,17 @@ class Article < ActiveRecord::Base
     update!(comment_count: comments.size, last_comment_at: comments.last.created_at)
   end
   
-  def epithets_with_counts
+  def epithet_votes_grouped_by_epithet
+    epithet_votes.group(:epithet_id)
+  end
+  
+  def epithets_with_users
     # Probably needs optimization.
-    epithet_votes.count.map do |epithet_array|
-      { epithet: Epithet.find(epithet_array.first), count: epithet_array.second }
+    epithets_with_users = {}
+    epithet_votes.each do |epithet_vote|
+      epithets_with_users[epithet_vote.epithet] ||= [] << epithet_vote.user
     end
+    epithets_with_users
   end
   
   def epithets_sentence

@@ -22,7 +22,6 @@ Features
 - Sort epithets by number of votes
 - Add page with all epithets
 - Limit epithet votes per article per person?
-- Show epithet vote users on hover
 - Add random article of the day
 - Autocomplete epithets
 - Make sure pasted text looks good with paragraphs and all
@@ -35,7 +34,8 @@ Looks
 
 Bugs
 ====
-- Fix non-clickable comment section
+- Elements in the comments section are unclickable
+- Epithet votes cannot be added
 
 Thoughts to be had
 ==================

@@ -48,3 +48,12 @@ ul#epithets-list li a {
     display: none;
   }
 }
+
+#epithet-popup {
+  @extend %base-typography;
+  
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 12px;
+  font-weight: normal;
+}
