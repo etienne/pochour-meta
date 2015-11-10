@@ -1,28 +1,34 @@
-section.epithets {
-  ul li a {
-    @extend %no-select;
-    float: left;
-    border: 1px solid rgba($text-color, 0.15);
-    padding: 3px 7px;
-    margin: 0 7px 7px 0;
-    cursor: pointer;
-    
-    &.selected {
-      background-color: $highlight-color-light;
-    }
-    
-    &.add {
-      border: 2px solid $text-color;
-      padding: 2px 8px;
-    }
-    
-    &:hover, &.selected:hover {
-      @extend %inverted;
-    }
+ul#epithets-list li a {
+  @extend %no-select;
+  @extend %base-typography;
+  
+  font-size: 12px;
+  font-weight: normal;
+  float: left;
+  border: 1px solid rgba($text-color, 0.15);
+  padding: 2px 7px;
+  margin: 0 7px 7px 0;
+  cursor: pointer;
+  
+  &.selected {
+    background-color: $highlight-color-light;
+  }
+  
+  &.add {
+    font-weight: bold;
+    border-color: inherit;
+    padding: 2px 8px;
+    font-size: 15px;
+  }
+  
+  &:hover, &.selected:hover {
+    @extend %inverted;
   }
 }
 
 #epithets-menu {
+  @extend %base-typography;
+
   padding-left: 14px;
   padding-right: 14px;
   

@@ -2,9 +2,12 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 html {
   @extend %base-typography;
-  padding-bottom: 140px;
 }
 
 html.turbolinks-progress-bar::before {
@@ -14,7 +17,7 @@ html.turbolinks-progress-bar::before {
 
 body {
   margin: 0;
-  padding: 56px 14px 112px;
+  padding: 56px 14px 0;
   background-color: $background-color;
 }
 

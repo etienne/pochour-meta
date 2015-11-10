@@ -12,7 +12,6 @@ If you want fake data in your database: `bin/rake db:seed`
 Todo
 ====
 
-- Article series
 - Invitations
 - Do something with public/private communities
 - Add lists to WYSIWYG editor
@@ -29,3 +28,8 @@ Todo
 - Allow comment editing for a certain time? 15m?
 - Sort epithets by number of votes
 - Add page with all epithets
+- Limit epithet votes per article per person?
+- Show epithet vote users on hover
+- Add random article of the day
+- Autocomplete epithets
+- Fix non-clickable comment section

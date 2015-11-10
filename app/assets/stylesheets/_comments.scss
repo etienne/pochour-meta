@@ -1,12 +1,24 @@
-section.epithets {
-  @include tablet {
-    @include span(4 of 12 first break);
-  }
-}
-
 section.comments {
+  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: $background-color-dark;
+  position: relative;
+  
   @include tablet {
     @include span(8 of 12 last);
+    @include post(1 of 12);
+  }
+  
+  &:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -9999px;
+    right: 0;
+    border-left: 9999px solid $background-color-dark;
+    box-shadow: 9999px 0 0 $background-color-dark;
   }
   
   ul {

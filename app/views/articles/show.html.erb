@@ -7,7 +7,7 @@
     <%= time_tag(@article.created_at, l(@article.created_at, format: :long)) %>
     <% if @article.updated_at.to_date != @article.created_at.to_date %>
       <br><%= t :modified %>
-      <%= time_tag(@article.updated_at, "#{t :on} " << l(@article.updated_at, format: :long)) %>
+      <%= time_tag(@article.updated_at, "#{t :on_date} #{l(@article.updated_at, format: :long)}") %>
     <% end %>
   </div>
 </aside>
@@ -28,49 +28,45 @@
   </p>
   <% end %>
   
-  <%= sanitize @article.body %>
-  
-  <% unless @article.next_in_series.blank? %>
-  <p class="note">
-    <%= t :followup %>
-    <%= link_to @article.next_in_series.title, @article.next_in_series %>.
-  </p>
-  <% end %>
-  
-  <% unless @article.responses.blank? %>
-  <div class="note">
-    <% if @article.responses.size == 1 %>
-      <%= t :response_to_this_article %>&nbsp;:
-      <%= link_to @article.responses.first.title, @article.responses.first %>
-      <%= "#{t :by} #{@article.responses.first.user.name}" %>
-    <% else %>
-      <%= t :responses_to_this_article %>&nbsp;:
-      <ul>
-        <% @article.responses.each do |response| %>
-          <li>
-            <%= link_to response.title, response %>
-            <%= "#{t :by} #{response.user.name}" %>
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
+  <div class="body">
+    <%= sanitize @article.body %>
   </div>
-  <% end %>
   
-  <% if policy(@article).edit? %>
-    <%= link_to(t(:edit_this_article), edit_article_path(@article), class: 'button') %>
-    <%= link_to(t(:write_followup), new_article_path(series_with_article_id: @article.id), class: 'button') %>
-  <% end %>
-  <%= link_to(t(:respond_to_this_article), new_article_path(original_article_id: @article.id), class: 'button') unless @article.user == current_user %>
-</article>
-
-<section class="epithets">
-  <h1><%= t :epithets %></h1>
+  <section class="related">
+    <% unless @article.next_in_series.blank? %>
+    <p class="note">
+      <%= t :followup %>
+      <%= link_to @article.next_in_series.title, @article.next_in_series %>.
+    </p>
+    <% end %>
+  
+    <% unless @article.responses.blank? %>
+    <div class="note">
+      <% if @article.responses.size == 1 %>
+        <%= t :response_to_this_article %>&nbsp;:
+        <%= link_to @article.responses.first.title, @article.responses.first %>
+        <%= "#{t :by} #{@article.responses.first.user.name}" %>
+      <% else %>
+        <%= t :responses_to_this_article %>&nbsp;:
+        <ul>
+          <% @article.responses.each do |response| %>
+            <li>
+              <%= link_to response.title, response %>
+              <%= "#{t :by} #{response.user.name}" %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+    <% end %>
+  </section>
+  
   <ul id="epithets-list">
     <% @article.epithets_with_counts.each do |epithet_hash| %>
       <% has_vote = @epithet_votes_by_current_user.pluck(:epithet_id).include? epithet_hash[:epithet].id %>
       <li>
-        <% link_text = epithet_hash[:epithet].name << %Q{<span class="count">#{epithet_hash[:count]}</span>} %>
+        <% link_text = epithet_hash[:epithet].name %>
+        <% link_text << %Q{<span class="count">#{epithet_hash[:count]}</span>} if epithet_hash[:count] > 1 %>
         <% if has_vote %>
           <%= link_to sanitize(link_text), @epithet_votes_by_current_user.detect { |e| e.epithet_id == epithet_hash[:epithet].id }, remote: true, method: :delete, class: 'selected' %>
         <% else %>
@@ -91,7 +87,17 @@
       <%= f.submit t :submit %>
     <% end %>
   </div>
-</section>
+  
+  <ul class="actions">
+    <% if policy(@article).edit? %>
+      <li><%= link_to(t(:edit_this_article), edit_article_path(@article), class: 'button') %></li>
+      <li><%= link_to(t(:write_followup), new_article_path(series_with_article_id: @article.id), class: 'button') %></li>
+    <% end %>
+    <% unless @article.user == current_user %>
+      <li><%= link_to(t(:respond_to_this_article), new_article_path(original_article_id: @article.id), class: 'button')  %></li>
+    <% end %>
+  </ul>
+</article>
 
 <section class="comments">
   <h1 id="comments"><%= t :comments %></h1>
@@ -114,5 +120,4 @@
     <%= f.text_area :body %>
     <%= f.submit t :comment_verb %>
   <% end %>
-  
 </section>

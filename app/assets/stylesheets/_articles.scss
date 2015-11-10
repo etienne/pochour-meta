@@ -2,7 +2,7 @@ aside {
   margin-bottom: 20px;
   
   @include tablet {
-    @include span(4 of 12 break first);
+    @include span(3 of 12 break first);
     margin-top: 5px;
   }
   
@@ -37,6 +37,7 @@ article {
   
   @include tablet {
     @include span(8 of 12 last);
+    @include post(1 of 12);
   }
   
   .actions {
@@ -50,6 +51,21 @@ article {
     min-height: 350px;
     outline: none;
   }
+}
+
+ul.actions {
+  padding: 40px 0;
+  clear: both;
+  
+  li {
+    float: left;
+    list-style: none;
+    margin-right: 14px;
+  }
+}
+
+section.related {
+  margin-bottom: 40px;
 }
 
 ul.articles {
