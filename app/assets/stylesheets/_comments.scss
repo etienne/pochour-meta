@@ -32,6 +32,13 @@ section.comments {
     &.highlighted {
       @extend %highlighted;
     }
+    
+    &.delay {
+      margin-top: -6px;
+      margin-bottom: 22px;
+      font-weight: normal;
+      color: rgba($text-color, 0.4);
+    }
   }
   
   a {

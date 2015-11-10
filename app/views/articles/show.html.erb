@@ -101,16 +101,21 @@
 <section class="comments">
   <h1 id="comments"><%= t :comments %></h1>
   <ul id="comments-list">
+    <% last_comment_created_at = Time.now() %>
     <% @article.comments.each do |c| %>
-    <li id="comment-id-<%= c.id %>">
-      <span class="metadata">
-        <%= link_to c.user.name, c.user %> 
-        <span class="secondary">— <%= time_tag(c.created_at, l(c.created_at, format: :long_with_time)) %></span>
-      </span>
-      <div class="body">
-        <%= sanitize c.body %>
-      </div>
-    </li>
+      <% if (c.created_at - last_comment_created_at) > 7.days %>
+        <li class="delay">(<%= "#{distance_of_time_in_words(c.created_at, last_comment_created_at)} #{t :later}" %>)</li>
+      <% end %>
+      <li id="comment-id-<%= c.id %>">
+        <span class="metadata">
+          <%= link_to c.user.name, c.user %> 
+          <span class="secondary">— <%= time_tag(c.created_at, l(c.created_at, format: :long_with_time)) %></span>
+        </span>
+        <div class="body">
+          <%= sanitize c.body %>
+        </div>
+      </li>
+      <% last_comment_created_at = c.created_at %>
     <% end %>
   </ul>
   
